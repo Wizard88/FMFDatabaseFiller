@@ -53,17 +53,28 @@
     <Compile Include="Submodules\IFactory.cs" />
     <Compile Include="Submodules\OdlukeUstavnogSuda.cs" />
     <Compile Include="Submodules\Scope.cs" />
+    <Compile Include="TableCase\BankAccount.cs" />
     <Compile Include="TableCase\BudgetYear.cs" />
+    <Compile Include="TableCase\ControlAuthority.cs" />
     <Compile Include="TableCase\CurrencyType.cs" />
     <Compile Include="TableCase\Decision.cs" />
     <Compile Include="TableCase\DecisionPayment.cs" />
     <Compile Include="TableCase\Factory.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="TableCase\IFactory.cs" />
+    <Compile Include="TableCase\IncomeType.cs" />
+    <Compile Include="TableCase\Municipality.cs" />
     <Compile Include="TableCase\ObligationType.cs" />
+    <Compile Include="TableCase\OrdinalNumber.cs" />
     <Compile Include="TableCase\PaymentStatus.cs" />
     <Compile Include="TableCase\PersonType.cs" />
+    <Compile Include="TableCase\Refund.cs" />
+    <Compile Include="TableCase\RefundPayment.cs" />
+    <Compile Include="TableCase\RefundRelation.cs" />
+    <Compile Include="TableCase\RefundSubjectStatus.cs" />
+    <Compile Include="TableCase\ReturnType.cs" />
     <Compile Include="TableCase\Scope.cs" />
+    <Compile Include="TableCase\TaxPayer.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
