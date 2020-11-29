@@ -4,7 +4,7 @@ namespace DAL.TableCase
 {
     public class Factory : IFactory
     {
-        public ICommand GetBankAccount(DataTable table)
+        public ICommand GetBankAccountFiller(DataTable table)
         {
             return new BankAccount(table);
         }
@@ -14,9 +14,9 @@ namespace DAL.TableCase
             return new BudgetYear(table);
         }
 
-        public ICommand GetControlAuthority(DataTable table)
+        public ICommand GetControlAuthorityFiller(DataTable table)
         {
-            throw new System.NotImplementedException();
+            return new ControlAuthority(table);
         }
 
         public ICommand GetCurrencyTypeFiller(DataTable table)
@@ -34,14 +34,14 @@ namespace DAL.TableCase
             return new DecisionPayment(table);
         }
 
-        public ICommand GetIncomeType(DataTable table)
+        public ICommand GetIncomeTypeFiller(DataTable table)
         {
-            throw new System.NotImplementedException();
+            return new IncomeType(table);
         }
 
-        public ICommand GetMunicipality(DataTable table)
+        public ICommand GetMunicipalityFiller(DataTable table)
         {
-            throw new System.NotImplementedException();
+            return new Municipality(table);
         }
 
         public ICommand GetObligationTypeFiller(DataTable table)
@@ -49,9 +49,9 @@ namespace DAL.TableCase
             return new ObligationType(table);
         }
 
-        public ICommand GetOrdinalNumber(DataTable table)
+        public ICommand GetOrdinalNumberFiller(DataTable table)
         {
-            throw new System.NotImplementedException();
+            return new OrdinalNumber(table);
         }
 
         public ICommand GetPaymentStatusFiller(DataTable table)
@@ -64,32 +64,32 @@ namespace DAL.TableCase
             return new PersonType(table);
         }
 
-        public ICommand GetRefund(DataTable table)
+        public ICommand GetRefundFiller(DataTable table)
         {
             return new Refund(table);
         }
 
-        public ICommand GetRefundPayment(DataTable table)
+        public ICommand GetRefundPaymentFiller(DataTable table)
         {
             return new RefundPayment(table);
         }
 
-        public ICommand GetRefundRelation(DataTable table)
+        public ICommand GetRefundRelationFiller(DataTable table)
         {
             return new RefundRelation(table);
         }
 
-        public ICommand GetRefundSubjectStatus(DataTable table)
+        public ICommand GetRefundSubjectStatusFiller(DataTable table)
         {
             return new RefundSubjectStatus(table);
         }
 
-        public ICommand GetReturnType(DataTable table)
+        public ICommand GetReturnTypeFiller(DataTable table)
         {
             return new ReturnType(table);
         }
 
-        public ICommand GetTaxPayer(DataTable tableApplicant, DataTable tableNameOfApplicant)
+        public ICommand GetTaxPayerFiller(DataTable tableApplicant, DataTable tableNameOfApplicant)
         {
             return new TaxPayer(tableApplicant, tableNameOfApplicant);
         }

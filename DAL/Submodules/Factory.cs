@@ -8,5 +8,10 @@ namespace DAL.Submodules
         {
             return new OdlukeUstavnogSuda(dataSet);
         }
+
+        public ICommand GetJudgmentsRefunds(DataSet dataSet)
+        {
+            return new Povrati(dataSet);
+        }
     }
 }

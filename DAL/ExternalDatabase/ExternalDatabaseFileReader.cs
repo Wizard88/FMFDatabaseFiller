@@ -43,6 +43,7 @@ namespace DAL.ExternalDatabase
         private SubModule GetDataSetName(List<string> listOfTableNames)
         {
             if (listOfTableNames.Contains("APCH_odlukeIsplata")) return SubModule.OdlukeUstavnogSuda;
+            else if (listOfTableNames.Contains("PovratiPlacanje")) return SubModule.Povrati;
             else
                 return SubModule.OdlukeUstavnogSuda;
         }

@@ -57,7 +57,8 @@ namespace FMFDatabaseFiller
             {
                 case SubModule.OdlukeUstavnogSuda:
                     _subModulesCommand = DAL.Submodules.Scope.Factory.GetDecisionsOfTheConstitutionalCourt(dataSet); break;
-
+                case SubModule.Povrati:
+                    _subModulesCommand = DAL.Submodules.Scope.Factory.GetJudgmentsRefunds(dataSet); break;
                 default:
                     break;
             }

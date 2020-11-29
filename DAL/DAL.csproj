@@ -52,6 +52,7 @@
     <Compile Include="Submodules\Factory.cs" />
     <Compile Include="Submodules\IFactory.cs" />
     <Compile Include="Submodules\OdlukeUstavnogSuda.cs" />
+    <Compile Include="Submodules\Povrati.cs" />
     <Compile Include="Submodules\Scope.cs" />
     <Compile Include="TableCase\BankAccount.cs" />
     <Compile Include="TableCase\BudgetYear.cs" />
