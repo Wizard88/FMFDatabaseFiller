@@ -54,9 +54,12 @@
     <Compile Include="Submodules\OdlukeUstavnogSuda.cs" />
     <Compile Include="Submodules\Povrati.cs" />
     <Compile Include="Submodules\Scope.cs" />
+    <Compile Include="TableCase\Bank.cs" />
     <Compile Include="TableCase\BankAccount.cs" />
+    <Compile Include="TableCase\BudgetInstitution.cs" />
     <Compile Include="TableCase\BudgetYear.cs" />
     <Compile Include="TableCase\ControlAuthority.cs" />
+    <Compile Include="TableCase\CourtCosts.cs" />
     <Compile Include="TableCase\CurrencyType.cs" />
     <Compile Include="TableCase\Decision.cs" />
     <Compile Include="TableCase\DecisionPayment.cs" />
@@ -64,9 +67,15 @@
     <Compile Include="ICommand.cs" />
     <Compile Include="TableCase\IFactory.cs" />
     <Compile Include="TableCase\IncomeType.cs" />
+    <Compile Include="TableCase\JudgementDelivery.cs" />
+    <Compile Include="TableCase\JudgmentAndExecutiveResult.cs" />
+    <Compile Include="TableCase\JudgmentAndExecutiveResultRelation.cs" />
+    <Compile Include="TableCase\JudgmentExecResSubjectStatus.cs" />
     <Compile Include="TableCase\Municipality.cs" />
     <Compile Include="TableCase\ObligationType.cs" />
+    <Compile Include="TableCase\ObligationTypeGR.cs" />
     <Compile Include="TableCase\OrdinalNumber.cs" />
+    <Compile Include="TableCase\PaymentMethod.cs" />
     <Compile Include="TableCase\PaymentStatus.cs" />
     <Compile Include="TableCase\PersonType.cs" />
     <Compile Include="TableCase\Refund.cs" />
@@ -75,7 +84,10 @@
     <Compile Include="TableCase\RefundSubjectStatus.cs" />
     <Compile Include="TableCase\ReturnType.cs" />
     <Compile Include="TableCase\Scope.cs" />
+    <Compile Include="TableCase\SubjectStatus.cs" />
+    <Compile Include="TableCase\SubjectType.cs" />
     <Compile Include="TableCase\TaxPayer.cs" />
+    <Compile Include="TableCase\TaxPayerExecutiveSolutions.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

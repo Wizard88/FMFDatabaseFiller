@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace DAL.TableCase
 {
@@ -18,13 +19,13 @@ namespace DAL.TableCase
                 object budzetskaGodina = row["BudzetskaGodina"];
                 object datumUnosa = row["DatumUnosa"];
 
-                //SqlCommand cmd = new SqlCommand("BudgetYearInsert", SQLSingleton.Instance.SqlConnection)
-                //{
-                //    CommandType = System.Data.CommandType.StoredProcedure
-                //};
+                SqlCommand cmd = new SqlCommand("BudgetYearInsert", SQLSingleton.Instance.SqlConnection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
 
-                //cmd.Parameters.AddWithValue("@BudgetYear", budzetskaGodina);
-                //cmd.Parameters.AddWithValue("@CreateDate", datumUnosa);
+                cmd.Parameters.AddWithValue("@BudgetYear", budzetskaGodina);
+                cmd.Parameters.AddWithValue("@CreateDate", datumUnosa);
             }
         }
     }
