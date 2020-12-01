@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace DAL.TableCase
@@ -64,10 +65,37 @@ namespace DAL.TableCase
                 object apchNapomena = relatedRow["Napomena"];
                 object apchDatumUnosa = relatedRow["DatumUnosa"];
 
-                //SqlCommand cmd = new SqlCommand("BudgetYearInsert", SQLSingleton.Instance.SqlConnection)
-                //{
-                //    CommandType = System.Data.CommandType.StoredProcedure
-                //};
+                SqlCommand cmd = new SqlCommand("DecisionInsert", SQLSingleton.Instance.SqlConnection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+
+                cmd.Parameters.AddWithValue("@DecisionNumber", apchBrojOdluke);
+                cmd.Parameters.AddWithValue("@ProtocolNumber", apchBrojProtokola);
+                cmd.Parameters.AddWithValue("@TaxPayerID",);
+                cmd.Parameters.AddWithValue("@BudgetInstitutionID",);
+                cmd.Parameters.AddWithValue("@PaymentMethodID",);
+                cmd.Parameters.AddWithValue("@NumberOfInstallment",);
+                cmd.Parameters.AddWithValue("@LoanPrincipal",);
+                cmd.Parameters.AddWithValue("@Interest",);
+                cmd.Parameters.AddWithValue("@CourtCost",);
+                cmd.Parameters.AddWithValue("@Total",);
+                cmd.Parameters.AddWithValue("@DecisionDate",);
+                cmd.Parameters.AddWithValue("@ProtocolDate",);
+                cmd.Parameters.AddWithValue("@InNameOfTaxPayerID",);
+                cmd.Parameters.AddWithValue("@SubjectTypeID",);
+                cmd.Parameters.AddWithValue("@SubjectStatusID",);
+                cmd.Parameters.AddWithValue("@ObligationTypeID",);
+                cmd.Parameters.AddWithValue("@Doknjizavanje",);
+                cmd.Parameters.AddWithValue("@DatumDoknjizavanja",);
+                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaSudTros",);
+                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaGlavnice",);
+                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaKamate",);
+                cmd.Parameters.AddWithValue("@Note", apchNapomena);
+                cmd.Parameters.AddWithValue("@CreatedBy",);
+
+                cmd.ExecuteNonQuery();
+
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace DAL.TableCase
 {
@@ -16,9 +17,9 @@ namespace DAL.TableCase
             foreach (DataRow row in _table.Rows)
             {
                 object idAPCHOdlukeIsplata = row["IdAPCH_odlukeIsplata"];
-                object IdAPCHOdluke = row["IdAPCH_odluke"];
+                object idAPCHOdluke = row["IdAPCH_odluke"];
                 object brojProtokola = row["BrojProtokola"];
-                object DatumProtokola = row["DatumProtokola"];
+                object datumProtokola = row["DatumProtokola"];
                 object brojRjesenjaIzvrsenja = row["BrojRjesenjaIzvrsenja"];
                 object datumRjesenjaIzvrsenja = row["DatumRjesenjaIzvrsenja"];
                 object datumPrijema = row["DatumPrijema"];
@@ -38,7 +39,54 @@ namespace DAL.TableCase
                 object napomena = row["Napomena"];
                 object datumUnosa = row["DatumUnosa"];
 
+                SqlCommand cmdPayment = new SqlCommand("DecisionPayment.Save", SQLSingleton.Instance.SqlConnection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
 
+                cmdPayment.Parameters.AddWithValue("@DecisionID",);
+                cmdPayment.Parameters.AddWithValue("@DecisionInstallmentID",);
+                cmdPayment.Parameters.AddWithValue("@DocumentNumber",);
+                cmdPayment.Parameters.AddWithValue("@DocumentDate",);
+                cmdPayment.Parameters.AddWithValue("@BudgetYear",);
+                cmdPayment.Parameters.AddWithValue("@MinistryBankAccountID",);
+                cmdPayment.Parameters.AddWithValue("@StatementNumber",);
+                cmdPayment.Parameters.AddWithValue("@RecivedDocumentNumber",);
+                cmdPayment.Parameters.AddWithValue("@RecivedDate",);
+                cmdPayment.Parameters.AddWithValue("@RecivedBankDate",);
+                cmdPayment.Parameters.AddWithValue("@TaxPayerID",);
+                cmdPayment.Parameters.AddWithValue("@TaxPayerBankAccountID",);
+                cmdPayment.Parameters.AddWithValue("@PayOutDate",);
+                cmdPayment.Parameters.AddWithValue("@Total",);
+                cmdPayment.Parameters.AddWithValue("@CourtCost",);
+                cmdPayment.Parameters.AddWithValue("@LoanPrincipal",);
+                cmdPayment.Parameters.AddWithValue("@Interest",);
+                cmdPayment.Parameters.AddWithValue("@Isknjizavanje",);
+                cmdPayment.Parameters.AddWithValue("@DatumIsknjizavanja",);
+                cmdPayment.Parameters.AddWithValue("@ForPayOut",);
+                cmdPayment.Parameters.AddWithValue("@Note",);
+                cmdPayment.Parameters.AddWithValue("@MinistryBankID",);
+
+                cmdPayment.ExecuteNonQuery();
+
+                SqlCommand cmdInstallment = new SqlCommand("DecisionInstallment.Save", SQLSingleton.Instance.SqlConnection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+
+                cmdInstallment.Parameters.AddWithValue("@DecisionID",);
+                cmdInstallment.Parameters.AddWithValue("@DeliveryDate",);
+                cmdInstallment.Parameters.AddWithValue("@BudgetYear",);
+                cmdInstallment.Parameters.AddWithValue("@PaymentStatusID",);
+                cmdInstallment.Parameters.AddWithValue("@Total",);
+                cmdInstallment.Parameters.AddWithValue("@CourtCost",);
+                cmdInstallment.Parameters.AddWithValue("@LoanPrincipal",);
+                cmdInstallment.Parameters.AddWithValue("@Interest",);
+                cmdInstallment.Parameters.AddWithValue("@Note",);
+                cmdInstallment.Parameters.AddWithValue("@OrdinalNumber",);
+                cmdInstallment.Parameters.AddWithValue("@CreatedBy",);
+
+                cmdInstallment.ExecuteNonQuery();
             }
         }
     }

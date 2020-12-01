@@ -56,9 +56,9 @@ namespace FMFDatabaseFiller
             switch (subModuleEnum)
             {
                 case SubModule.OdlukeUstavnogSuda:
-                    _subModulesCommand = DAL.Submodules.Scope.Factory.GetDecisionsOfTheConstitutionalCourt(dataSet); break;
+                    _subModulesCommand = DAL.Submodules.Scope.Factory.GetDecisionsOfTheConstitutionalCourt(dataSet, !cbRunAsTest.Checked); break;
                 case SubModule.Povrati:
-                    _subModulesCommand = DAL.Submodules.Scope.Factory.GetJudgmentsRefunds(dataSet); break;
+                    _subModulesCommand = DAL.Submodules.Scope.Factory.GetJudgmentsRefunds(dataSet, !cbRunAsTest.Checked); break;
                 default:
                     break;
             }

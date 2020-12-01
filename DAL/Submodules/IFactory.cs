@@ -4,7 +4,7 @@ namespace DAL.Submodules
 {
     public interface IFactory
     {
-        ICommand GetDecisionsOfTheConstitutionalCourt(DataSet dataSet);
-        ICommand GetJudgmentsRefunds(DataSet dataSet);
+        ICommand GetDecisionsOfTheConstitutionalCourt(DataSet dataSet, bool isTransactionAllowed);
+        ICommand GetJudgmentsRefunds(DataSet dataSet, bool isTransactionAllowed);
     }
 }

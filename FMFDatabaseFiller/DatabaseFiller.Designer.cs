@@ -33,6 +33,7 @@
             this.lblPath = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.btnExecute = new System.Windows.Forms.Button();
+            this.cbRunAsTest = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tbPath
@@ -80,11 +81,24 @@
             this.btnExecute.UseVisualStyleBackColor = true;
             this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
             // 
+            // cbRunAsTest
+            // 
+            this.cbRunAsTest.AutoSize = true;
+            this.cbRunAsTest.Checked = true;
+            this.cbRunAsTest.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbRunAsTest.Location = new System.Drawing.Point(55, 92);
+            this.cbRunAsTest.Name = "cbRunAsTest";
+            this.cbRunAsTest.Size = new System.Drawing.Size(102, 21);
+            this.cbRunAsTest.TabIndex = 4;
+            this.cbRunAsTest.Text = "Run as test";
+            this.cbRunAsTest.UseVisualStyleBackColor = true;
+            // 
             // DatabaseFiller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 139);
+            this.Controls.Add(this.cbRunAsTest);
             this.Controls.Add(this.btnExecute);
             this.Controls.Add(this.lblPath);
             this.Controls.Add(this.btnBrowse);
@@ -105,6 +119,7 @@
         private System.Windows.Forms.Label lblPath;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Button btnExecute;
+        private System.Windows.Forms.CheckBox cbRunAsTest;
     }
 }
 

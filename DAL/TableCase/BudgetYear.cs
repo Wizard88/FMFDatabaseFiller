@@ -25,7 +25,13 @@ namespace DAL.TableCase
                 };
 
                 cmd.Parameters.AddWithValue("@BudgetYear", budzetskaGodina);
+                //cmd.Parameters.AddWithValue("@Description", budzetskaGodina);
+                //cmd.Parameters.AddWithValue("@zOrder", budzetskaGodina);
                 cmd.Parameters.AddWithValue("@CreateDate", datumUnosa);
+                //cmd.Parameters.AddWithValue("@UserID", datumUnosa);
+                //cmd.Parameters.AddWithValue("@Active", datumUnosa);
+
+                cmd.ExecuteNonQuery();
             }
         }
     }
