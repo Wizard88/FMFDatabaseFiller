@@ -1,36 +1,25 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 
 namespace DAL.TableCase
 {
-    internal class TaxPayer : ICommand
+    internal class TaxPayerRefundSide : ICommand
     {
-        private readonly DataTable _tableApplicant;
-        private readonly DataTable _tableNameOfApplicant;
+        private readonly DataTable _table;
 
-        public TaxPayer(DataTable tableApplicant, DataTable tableNameOfApplicant)
+        public TaxPayerRefundSide(DataTable table)
         {
-            _tableApplicant = tableApplicant;
-            _tableNameOfApplicant = tableNameOfApplicant;
+            _table = table;
         }
 
         public void Execute(SqlTransaction transaction)
         {
-            foreach (DataRow row in _tableApplicant.Rows)
+            foreach (DataRow row in _table.Rows)
             {
-                object idNazivPodnosilacZahtjeva = row["IdNazivPodnosilacZahtjeva"];
+                object idStranaZaPovrat = row["IdStranaZaPovrat"];
+                object stranaZaPovrat = row["StranaZaPovrat"];
                 object idSjediste = row["IdSjediste"];
                 object datumUnosa = row["DatumUnosa"];
-
-                EnumerableRowCollection<DataRow> results = from myRow in _tableNameOfApplicant.AsEnumerable()
-                                                           where myRow.Field<int>("IdNazivPodnosilacZahtjeva") == (int)idNazivPodnosilacZahtjeva
-                                                           select myRow;
-
-                DataRow relatedRow = results.FirstOrDefault();
-
-                object rNazivPodnosilacZahtjeva = relatedRow["NazivPodnosilacZahtjeva"];
-                object rDatumUnosa = relatedRow["DatumUnosa"];
 
                 SqlCommand cmd = new SqlCommand("TaxPayer.Save", SQLSingleton.Instance.SqlConnection)
                 {

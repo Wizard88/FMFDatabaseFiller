@@ -6,7 +6,7 @@ namespace DAL.TableCase
     {
         public ICommand GetBankAccountFiller(DataTable table)
         {
-            return new BankAccount(table);
+            return new MinistryBankAccount(table);
         }
 
         public ICommand GetBudgetYearFiller(DataTable table)
@@ -71,7 +71,7 @@ namespace DAL.TableCase
 
         public ICommand GetRefundPaymentFiller(DataTable table)
         {
-            return new RefundPayment(table);
+            return new RefundInstallmentAndPayment(table);
         }
 
         public ICommand GetRefundRelationFiller(DataTable table)

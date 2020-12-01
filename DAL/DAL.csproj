@@ -55,7 +55,7 @@
     <Compile Include="Submodules\Povrati.cs" />
     <Compile Include="Submodules\Scope.cs" />
     <Compile Include="TableCase\Bank.cs" />
-    <Compile Include="TableCase\BankAccount.cs" />
+    <Compile Include="TableCase\MinistryBankAccount.cs" />
     <Compile Include="TableCase\BudgetInstitution.cs" />
     <Compile Include="TableCase\BudgetYear.cs" />
     <Compile Include="TableCase\ControlAuthority.cs" />
@@ -80,7 +80,7 @@
     <Compile Include="TableCase\PaymentStatus.cs" />
     <Compile Include="TableCase\PersonType.cs" />
     <Compile Include="TableCase\Refund.cs" />
-    <Compile Include="TableCase\RefundPayment.cs" />
+    <Compile Include="TableCase\RefundInstallmentAndPayment.cs" />
     <Compile Include="TableCase\RefundRelation.cs" />
     <Compile Include="TableCase\RefundSubjectStatus.cs" />
     <Compile Include="TableCase\ReturnType.cs" />
@@ -89,6 +89,8 @@
     <Compile Include="TableCase\SubjectType.cs" />
     <Compile Include="TableCase\TaxPayer.cs" />
     <Compile Include="TableCase\TaxPayerExecutiveSolutions.cs" />
+    <Compile Include="TableCase\TaxPayerNameOfWhom.cs" />
+    <Compile Include="TableCase\TaxPayerRefundSide.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,6 +18,19 @@ namespace DAL.TableCase
             {
                 object statusPredmeta = row["StatusPredmeta"];
                 object datumUnosa = row["DatumUnosa"];
+
+                string commandText = string.Format("Insert into RefundSubjectStatus (RefundSubjectStatusID,Title,Code,DateCreated,Active) VALUES ({0},{1},{2},{3},{4})",);
+
+
+                SqlCommand cmd = new SqlCommand()
+                {
+                    Connection = SQLSingleton.Instance.SqlConnection,
+                    CommandType = System.Data.CommandType.TableDirect,
+                    CommandText = commandText,
+                    Transaction = transaction
+                };
+
+                cmd.ExecuteNonQuery();
             }
         }
     }

@@ -23,7 +23,17 @@ namespace DAL.TableCase
                 object idVezaPredmetaOdKoga = row["IdVezaPredmetaOdKoga"];
                 object datumUnosa = row["DatumUnosa"];
 
+                SqlCommand cmd = new SqlCommand("RefundRelationSave", SQLSingleton.Instance.SqlConnection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure,
+                    Transaction = transaction
+                };
 
+                cmd.Parameters.AddWithValue("@Refund1ID",);
+                cmd.Parameters.AddWithValue("@Refund2ID",);
+                cmd.Parameters.AddWithValue("@UserID",);
+
+                cmd.ExecuteNonQuery();
             }
         }
     }

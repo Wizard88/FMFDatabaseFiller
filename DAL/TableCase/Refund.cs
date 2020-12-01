@@ -48,7 +48,39 @@ namespace DAL.TableCase
                 object napomena = row["Napomena"];
                 object datumUnosa = row["DatumUnosa"];
 
+                SqlCommand cmd = new SqlCommand("RefundInsert", SQLSingleton.Instance.SqlConnection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure,
+                    Transaction = transaction
+                };
 
+                cmd.Parameters.AddWithValue("@SubjectNumber", );
+                cmd.Parameters.AddWithValue("@ReceivingInWorkDate", );
+                cmd.Parameters.AddWithValue("@RequestSubmitterID", );
+                cmd.Parameters.AddWithValue("@OnBehalfOfWhomID", );
+                cmd.Parameters.AddWithValue("@ControlAuthorityActDate", );
+                cmd.Parameters.AddWithValue("@ClaimAgreementNumber", );
+                cmd.Parameters.AddWithValue("@ClaimAgreementDate", );
+                cmd.Parameters.AddWithValue("@ReturnTypeID", );
+                cmd.Parameters.AddWithValue("@SubjectDate", );
+                cmd.Parameters.AddWithValue("@RequestDate", );
+                cmd.Parameters.AddWithValue("@RequestNumber", );
+                cmd.Parameters.AddWithValue("@ControlAuthorityID", );
+                cmd.Parameters.AddWithValue("@ControlAuthorityActNumber", );
+                cmd.Parameters.AddWithValue("@SubjectStatusID", );
+                cmd.Parameters.AddWithValue("@NumberOfInstallment", );
+                cmd.Parameters.AddWithValue("@TotalClaim", );
+                cmd.Parameters.AddWithValue("@PaymentPrincipal", );
+                cmd.Parameters.AddWithValue("@PaymentInterest", );
+                cmd.Parameters.AddWithValue("@Doknjizavanje", );
+                cmd.Parameters.AddWithValue("@DatumDoknjizavanja", );
+                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaSudTros", );
+                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaGlavnice", );
+                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaKamate", );
+                cmd.Parameters.AddWithValue("@Note", );
+                cmd.Parameters.AddWithValue("@CreatedBy", );
+
+                cmd.ExecuteNonQuery();
             }
         }
     }
