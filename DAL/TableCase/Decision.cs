@@ -15,7 +15,7 @@ namespace DAL.TableCase
             _tableCH = tableCH;
         }
 
-        public void Execute()
+        public void Execute(SqlTransaction transaction)
         {
             foreach (DataRow row in _tableCH.Rows)
             {
@@ -67,7 +67,8 @@ namespace DAL.TableCase
 
                 SqlCommand cmd = new SqlCommand("DecisionInsert", SQLSingleton.Instance.SqlConnection)
                 {
-                    CommandType = System.Data.CommandType.StoredProcedure
+                    CommandType = System.Data.CommandType.StoredProcedure,
+                    Transaction = transaction
                 };
 
                 cmd.Parameters.AddWithValue("@DecisionNumber", apchBrojOdluke);

@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace DAL.TableCase
@@ -14,7 +15,7 @@ namespace DAL.TableCase
             _tablePersonFirm = tablePersonFirm;
         }
 
-        public void Execute()
+        public void Execute(SqlTransaction transaction)
         {
             foreach (DataRow row in _tablePersonFirm.Rows)
             {
@@ -32,7 +33,7 @@ namespace DAL.TableCase
                 DataRow relatedRow = results.FirstOrDefault();
 
                 object nazivOsobaFirma = relatedRow["NazivOsobaFirma"];
-                object datumUnosa = relatedRow["DatumUnosa"];
+                object datumUnosaRelated = relatedRow["DatumUnosa"];
             }
         }
     }

@@ -22,13 +22,13 @@ namespace DAL.Submodules
             {
                 transaction = SQLSingleton.Instance.SqlConnection.BeginTransaction("Load Submodule 'OdlukeUstavnogSuda'");
 
-                TableCase.Scope.Factory.GetObligationTypeFiller(_dataSet.Tables["VrstaObaveze"]).Execute();
-                TableCase.Scope.Factory.GetBudgetYearFiller(_dataSet.Tables["BudzetskaGodina"]).Execute();
-                TableCase.Scope.Factory.GetPaymentStatusFiller(_dataSet.Tables["StatusPlacanja"]).Execute();
-                TableCase.Scope.Factory.GetPersonTypeFiller(_dataSet.Tables["TipOsobe"]).Execute();
-                TableCase.Scope.Factory.GetCurrencyTypeFiller(_dataSet.Tables["VrstaValute"]).Execute();
-                TableCase.Scope.Factory.GetDecisionFiller(_dataSet.Tables["APCH_odluke"], _dataSet.Tables["odluke_CH"]).Execute();
-                TableCase.Scope.Factory.GetDecisionPaymentFiller(_dataSet.Tables["APCH_odlukeIsplata"]).Execute();
+                TableCase.Scope.Factory.GetObligationTypeFiller(_dataSet.Tables["VrstaObaveze"]).Execute(transaction);
+                TableCase.Scope.Factory.GetBudgetYearFiller(_dataSet.Tables["BudzetskaGodina"]).Execute(transaction);
+                TableCase.Scope.Factory.GetPaymentStatusFiller(_dataSet.Tables["StatusPlacanja"]).Execute(transaction);
+                TableCase.Scope.Factory.GetPersonTypeFiller(_dataSet.Tables["TipOsobe"]).Execute(transaction);
+                TableCase.Scope.Factory.GetCurrencyTypeFiller(_dataSet.Tables["VrstaValute"]).Execute(transaction);
+                TableCase.Scope.Factory.GetDecisionFiller(_dataSet.Tables["APCH_odluke"], _dataSet.Tables["odluke_CH"]).Execute(transaction);
+                TableCase.Scope.Factory.GetDecisionPaymentFiller(_dataSet.Tables["APCH_odlukeIsplata"]).Execute(transaction);
 
                 if (_isTransactionAllowed)
                     transaction.Commit();

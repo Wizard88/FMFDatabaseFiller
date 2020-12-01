@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace DAL.TableCase
@@ -14,7 +15,7 @@ namespace DAL.TableCase
             _tableNameOfApplicant = tableNameOfApplicant;
         }
 
-        public void Execute()
+        public void Execute(SqlTransaction transaction)
         {
             foreach (DataRow row in _tableApplicant.Rows)
             {

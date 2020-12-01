@@ -65,6 +65,7 @@
     <Compile Include="TableCase\DecisionPayment.cs" />
     <Compile Include="TableCase\Factory.cs" />
     <Compile Include="ICommand.cs" />
+    <Compile Include="TableCase\ICommand.cs" />
     <Compile Include="TableCase\IFactory.cs" />
     <Compile Include="TableCase\IncomeType.cs" />
     <Compile Include="TableCase\JudgementDelivery.cs" />
