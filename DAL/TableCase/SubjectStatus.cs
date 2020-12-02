@@ -19,6 +19,19 @@ namespace DAL.TableCase
                 object tipVezePredmeta = row["TipVezePredmeta"];
                 object datumUnosa = row["DatumUnosa"];
 
+
+                SqlCommand cmd = new SqlCommand("SubjectStatusSave", SQLSingleton.Instance.SqlConnection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure,
+                    Transaction = transaction
+                };
+
+                cmd.Parameters.AddWithValue("@Title", );
+                cmd.Parameters.AddWithValue("@Code", );
+                cmd.Parameters.AddWithValue("@zOrder", );
+                cmd.Parameters.AddWithValue("@Description", );
+                cmd.Parameters.AddWithValue("@Active", );
+                cmd.Parameters.AddWithValue("@CreatedBy", );
             }
         }
     }

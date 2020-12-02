@@ -18,6 +18,21 @@ namespace DAL.TableCase
             {
                 object nacinPlacanja = row["NacinPlacanja"];
                 object datumUnosa = row["DatumUnosa"];
+
+                SqlCommand cmd = new SqlCommand("PaymentMethodInsert", SQLSingleton.Instance.SqlConnection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure,
+                    Transaction = transaction
+                };
+
+                cmd.Parameters.AddWithValue("@Title", );
+                cmd.Parameters.AddWithValue("@Description", );
+                cmd.Parameters.AddWithValue("@zOrder", );
+                cmd.Parameters.AddWithValue("@CreateDate", );
+                cmd.Parameters.AddWithValue("@UserID", );
+                cmd.Parameters.AddWithValue("@Active", );
+
+                cmd.ExecuteNonQuery();
             }
         }
     }

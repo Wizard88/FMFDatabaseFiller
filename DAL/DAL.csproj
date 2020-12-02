@@ -51,6 +51,7 @@
     <Compile Include="Enums.cs" />
     <Compile Include="Submodules\Factory.cs" />
     <Compile Include="Submodules\IFactory.cs" />
+    <Compile Include="Submodules\IzvrsnaResenja.cs" />
     <Compile Include="Submodules\OdlukeUstavnogSuda.cs" />
     <Compile Include="Submodules\Povrati.cs" />
     <Compile Include="Submodules\Scope.cs" />
