@@ -2,14 +2,14 @@
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.JudgmentAndExecutiveResult
 {
-    internal class TaxPayerExecutiveSolutions : ICommand
+    internal class TaxPayer : ICommand
     {
         private readonly DataTable _tableNamePersonFirm;
         private readonly DataTable _tablePersonFirm;
 
-        public TaxPayerExecutiveSolutions(DataTable tableNamePersonFirm, DataTable tablePersonFirm)
+        public TaxPayer(DataTable tableNamePersonFirm, DataTable tablePersonFirm)
         {
             _tableNamePersonFirm = tableNamePersonFirm;
             _tablePersonFirm = tablePersonFirm;

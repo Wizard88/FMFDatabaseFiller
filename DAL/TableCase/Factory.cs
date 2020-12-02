@@ -105,22 +105,17 @@ namespace DAL.TableCase
         {
             return new DAL.TableCase.Refunds.IncomeType(table);
         }
-        //
 
+        //JudgmentAndExecutiveResult
+        public ICommand GetJudgmentAndExecutiveResultTaxPayer(DataTable dataTable, DataTable dataTable1)
+        {
 
+        }
 
         public ICommand GetObligationTypeFiller(DataTable table)
         {
             return new ObligationType(table);
         }
-
-
-
-
-
-
-
-
 
     }
 }

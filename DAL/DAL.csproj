@@ -51,7 +51,7 @@
     <Compile Include="Enums.cs" />
     <Compile Include="Submodules\Factory.cs" />
     <Compile Include="Submodules\IFactory.cs" />
-    <Compile Include="Submodules\IzvrsnaResenja.cs" />
+    <Compile Include="Submodules\JudgmentAndExecutiveResult.cs" />
     <Compile Include="Submodules\DecisionsOfConstitutionalCourt.cs" />
     <Compile Include="Submodules\JudgmentsRefund.cs" />
     <Compile Include="Submodules\Scope.cs" />
@@ -88,12 +88,10 @@
     <Compile Include="TableCase\SubjectStatus.cs" />
     <Compile Include="TableCase\SubjectType.cs" />
     <Compile Include="TableCase\Refunds\TaxPayer.cs" />
-    <Compile Include="TableCase\TaxPayerExecutiveSolutions.cs" />
+    <Compile Include="TableCase\JudgmentAndExecutiveResults\TaxPayer.cs" />
     <Compile Include="TableCase\Refunds\TaxPayerNameOfWhom.cs" />
     <Compile Include="TableCase\Refunds\TaxPayerRefundSide.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TableCase\JudgmentAndExecutiveResult\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

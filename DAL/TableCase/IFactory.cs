@@ -11,11 +11,11 @@ namespace DAL.TableCase
         ICommand GetCurrencyTypeFiller(DataTable table);
         ICommand GetObligationTypeFiller(DataTable table);
         ICommand GetPersonTypeFiller(DataTable table);
-
         ICommand GetBudgetInstitutionFiller(DataTable table);
         ICommand GetIncomeTypeFiller(DataTable table);
         ICommand GetMunicipalityFiller(DataTable table);
         ICommand GetOrdinalNumberFiller(DataTable table);
+        ICommand GetJudgmentAndExecutiveResultTaxPayer(DataTable dataTable, DataTable dataTable1);
         ICommand GetRefundFiller(DataTable table);
         ICommand GetRefundPaymentAndInstallmentFiller(DataTable table);
         ICommand GetRefundRelationFiller(DataTable table);
