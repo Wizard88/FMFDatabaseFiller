@@ -72,7 +72,6 @@
     <Compile Include="TableCase\JudgementDelivery.cs" />
     <Compile Include="TableCase\JudgmentAndExecutiveResult.cs" />
     <Compile Include="TableCase\JudgmentAndExecutiveResultRelation.cs" />
-    <Compile Include="TableCase\JudgmentExecResSubjectStatus.cs" />
     <Compile Include="TableCase\Municipality.cs" />
     <Compile Include="TableCase\ObligationType.cs" />
     <Compile Include="TableCase\ObligationTypeGR.cs" />
