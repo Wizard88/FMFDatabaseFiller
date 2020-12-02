@@ -55,7 +55,9 @@
     <Compile Include="Submodules\DecisionsOfConstitutionalCourt.cs" />
     <Compile Include="Submodules\JudgmentsRefund.cs" />
     <Compile Include="Submodules\Scope.cs" />
-    <Compile Include="TableCase\Bank.cs" />
+    <Compile Include="TableCase\ExecutiveResults\Bank.cs" />
+    <Compile Include="TableCase\ExecutiveResults\BudgetInstitution.cs" />
+    <Compile Include="TableCase\ExecutiveResults\BudgetYear.cs" />
     <Compile Include="TableCase\Refunds\MinistryBankAccount.cs" />
     <Compile Include="TableCase\BudgetInstitution1.cs" />
     <Compile Include="TableCase\DecisionsOConstitutionalCourt\BudgetYear.cs" />
@@ -69,14 +71,14 @@
     <Compile Include="TableCase\ICommand.cs" />
     <Compile Include="TableCase\IFactory.cs" />
     <Compile Include="TableCase\Refunds\IncomeType.cs" />
-    <Compile Include="TableCase\JudgementDelivery.cs" />
+    <Compile Include="TableCase\ExecutiveResults\JudgementDelivery.cs" />
     <Compile Include="TableCase\JudgmentAndExecutiveResult.cs" />
-    <Compile Include="TableCase\JudgmentAndExecutiveResultRelation.cs" />
+    <Compile Include="TableCase\ExecutiveResults\ResultRelation.cs" />
     <Compile Include="TableCase\Refunds\Municipality.cs" />
     <Compile Include="TableCase\DecisionsOConstitutionalCourt\ObligationType.cs" />
     <Compile Include="TableCase\ObligationTypeGR.cs" />
     <Compile Include="TableCase\Refunds\OrdinalNumber.cs" />
-    <Compile Include="TableCase\PaymentMethod.cs" />
+    <Compile Include="TableCase\ExecutiveResults\PaymentMethod.cs" />
     <Compile Include="TableCase\DecisionsOConstitutionalCourt\PaymentStatus.cs" />
     <Compile Include="TableCase\DecisionsOConstitutionalCourt\PersonType.cs" />
     <Compile Include="TableCase\Refunds\Refund.cs" />
@@ -88,7 +90,7 @@
     <Compile Include="TableCase\SubjectStatus.cs" />
     <Compile Include="TableCase\SubjectType.cs" />
     <Compile Include="TableCase\Refunds\TaxPayer.cs" />
-    <Compile Include="TableCase\JudgmentAndExecutiveResults\TaxPayer.cs" />
+    <Compile Include="TableCase\ExecutiveResults\TaxPayer.cs" />
     <Compile Include="TableCase\Refunds\TaxPayerNameOfWhom.cs" />
     <Compile Include="TableCase\Refunds\TaxPayerRefundSide.cs" />
   </ItemGroup>

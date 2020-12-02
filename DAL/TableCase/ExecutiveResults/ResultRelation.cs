@@ -1,13 +1,13 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.ExecutiveResults
 {
-    internal class JudgmentAndExecutiveResultRelation : ICommand
+    internal class ResultRelation : ICommand
     {
         private readonly DataTable _table;
 
-        public JudgmentAndExecutiveResultRelation(DataTable table)
+        public ResultRelation(DataTable table)
         {
             _table = table;
         }

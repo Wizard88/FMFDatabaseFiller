@@ -15,8 +15,14 @@ namespace DAL.TableCase
         ICommand GetIncomeTypeFiller(DataTable table);
         ICommand GetMunicipalityFiller(DataTable table);
         ICommand GetOrdinalNumberFiller(DataTable table);
-        ICommand GetJudgmentAndExecutiveResultTaxPayer(DataTable dataTable, DataTable dataTable1);
+        ICommand GetBankFiller(DataTable table);
+        ICommand GetJudgmentAndExecutiveResultTaxPayerFiller(DataTable tableNamePersonFirm, DataTable tablePersonFirm);
+        ICommand GetExecutiveResultBudgetInstitutionFiller(DataTable table);
+        ICommand GetJudgementDelivery(DataTable table);
         ICommand GetRefundFiller(DataTable table);
+        ICommand GetExecutiveResultBudgetYearFiller(DataTable table);
+        ICommand GetJudgmentAndExecutiveResultRelationFiller(DataTable table);
+        ICommand GetPaymentMethod(DataTable table);
         ICommand GetRefundPaymentAndInstallmentFiller(DataTable table);
         ICommand GetRefundRelationFiller(DataTable table);
         ICommand GetRefundPaymentStatusFiller(DataTable table);

@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace DAL.TableCase.JudgmentAndExecutiveResult
+namespace DAL.TableCase.ExecutiveResults
 {
     internal class TaxPayer : ICommand
     {
@@ -19,6 +19,7 @@ namespace DAL.TableCase.JudgmentAndExecutiveResult
         {
             foreach (DataRow row in _tablePersonFirm.Rows)
             {
+                object idOsobaFirma = row["IdOsobaFirma"];
                 object idNazivOsobaFirma = row["IdNazivOsobaFirma"];
                 object adresa = row["Adresa"];
                 object idSjediste = row["IdSjediste"];

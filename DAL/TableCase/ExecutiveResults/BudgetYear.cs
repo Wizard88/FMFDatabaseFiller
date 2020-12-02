@@ -1,13 +1,13 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.ExecutiveResults
 {
-    internal class PaymentMethod : ICommand
+    internal class BudgetYear : ICommand
     {
         private readonly DataTable _table;
 
-        public PaymentMethod(DataTable table)
+        public BudgetYear(DataTable table)
         {
             _table = table;
         }
@@ -16,16 +16,16 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
-                object nacinPlacanja = row["NacinPlacanja"];
-                object datumUnosa = row["DatumUnosa"];
+                object idGodinaBudzeta = row["IdGodinaBudzeta"];
+                object godinaBudzeta = row["GodinaBudzeta"];
 
-                SqlCommand cmd = new SqlCommand("PaymentMethodInsert", SQLSingleton.Instance.SqlConnection)
+                SqlCommand cmd = new SqlCommand("BudgetYearInsert", SQLSingleton.Instance.SqlConnection)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure,
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Title", );
+                cmd.Parameters.AddWithValue("@BudgetYear", );
                 cmd.Parameters.AddWithValue("@Description", );
                 cmd.Parameters.AddWithValue("@zOrder", );
                 cmd.Parameters.AddWithValue("@CreateDate", );

@@ -1,13 +1,13 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.ExecutiveResults
 {
-    internal class Bank : ICommand
+    internal class JudgementDelivery : ICommand
     {
         private readonly DataTable _table;
 
-        public Bank(DataTable table)
+        public JudgementDelivery(DataTable table)
         {
             _table = table;
         }
@@ -16,10 +16,10 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
-                object banka = row["Banka"];
+                object dostavljenoOd = row["DostavljenoOd"];
                 object datumUnosa = row["DatumUnosa"];
 
-                SqlCommand cmd = new SqlCommand("Bank.Save", SQLSingleton.Instance.SqlConnection)
+                SqlCommand cmd = new SqlCommand("JudgementDelivery.Save", SQLSingleton.Instance.SqlConnection)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure,
                     Transaction = transaction
@@ -30,7 +30,6 @@ namespace DAL.TableCase
                 cmd.Parameters.AddWithValue("@zOrder",);
                 cmd.Parameters.AddWithValue("@CreateByUser",);
                 cmd.Parameters.AddWithValue("@Code",);
-                cmd.Parameters.AddWithValue("@MinistryBank",);
 
                 cmd.ExecuteNonQuery();
             }

@@ -106,16 +106,49 @@ namespace DAL.TableCase
             return new DAL.TableCase.Refunds.IncomeType(table);
         }
 
-        //JudgmentAndExecutiveResult
-        public ICommand GetJudgmentAndExecutiveResultTaxPayer(DataTable dataTable, DataTable dataTable1)
+        //ExecutiveResult
+        public ICommand GetBankFiller(DataTable table)
         {
+            return new DAL.TableCase.ExecutiveResults.Bank(table);
+        }
 
+        public ICommand GetExecutiveResultBudgetInstitutionFiller(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.BudgetInstitution(table);
+        }
+
+        public ICommand GetJudgmentAndExecutiveResultTaxPayerFiller(DataTable tableNamePersonFirm, DataTable tablePersonFirm)
+        {
+            return new DAL.TableCase.ExecutiveResults.TaxPayer(tableNamePersonFirm, tablePersonFirm);
+        }
+
+        public ICommand GetJudgementDelivery(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.JudgementDelivery(table);
+        }
+
+        public ICommand GetPaymentMethod(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.PaymentMethod(table);
+        }
+
+
+
+
+
+        public ICommand GetJudgmentAndExecutiveResultRelationFiller(DataTable dataTable)
+        {
+            throw new System.NotImplementedException();
         }
 
         public ICommand GetObligationTypeFiller(DataTable table)
         {
-            return new ObligationType(table);
+            return new DAL.TableCase.DecisionsOConstitutionalCourt.ObligationType(table);
         }
 
+        public ICommand GetExecutiveResultBudgetYearFiller(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.BudgetYear(table);
+        }
     }
 }
