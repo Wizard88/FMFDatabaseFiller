@@ -2,7 +2,7 @@
 
 namespace DAL.TableCase
 {
-    internal interface ICommand
+    public interface ICommand
     {
         void Execute(SqlTransaction transaction);
     }

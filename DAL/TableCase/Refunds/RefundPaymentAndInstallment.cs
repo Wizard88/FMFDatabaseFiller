@@ -1,13 +1,13 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.Refunds
 {
-    internal class RefundInstallmentAndPayment : ICommand
+    internal class RefundPaymentAndInstallment : ICommand
     {
         private readonly DataTable _table;
 
-        public RefundInstallmentAndPayment(DataTable table)
+        public RefundPaymentAndInstallment(DataTable table)
         {
             _table = table;
         }
@@ -16,6 +16,7 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
+                object idPovratiPlacanje = row["IdPovratiPlacanje"];
                 object idPovrati = row["IdPovrati"];
                 object brojRjesenja = row["BrojRjesenja"];
                 object datumRjesenja = row["DatumRjesenja"];

@@ -1,13 +1,13 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.DecisionsOConstitutionalCourt
 {
-    internal class DecisionPayment : ICommand
+    internal class DecisionPaymentAndInstallment : ICommand
     {
         private readonly DataTable _table;
 
-        public DecisionPayment(DataTable table)
+        public DecisionPaymentAndInstallment(DataTable table)
         {
             _table = table;
         }
@@ -68,8 +68,6 @@ namespace DAL.TableCase
                 cmdPayment.Parameters.AddWithValue("@Note",);
                 cmdPayment.Parameters.AddWithValue("@MinistryBankID",);
 
-                cmdPayment.ExecuteNonQuery();
-
                 SqlCommand cmdInstallment = new SqlCommand("DecisionInstallment.Save", SQLSingleton.Instance.SqlConnection)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure,
@@ -88,6 +86,7 @@ namespace DAL.TableCase
                 cmdInstallment.Parameters.AddWithValue("@OrdinalNumber",);
                 cmdInstallment.Parameters.AddWithValue("@CreatedBy",);
 
+                cmdPayment.ExecuteNonQuery();
                 cmdInstallment.ExecuteNonQuery();
             }
         }

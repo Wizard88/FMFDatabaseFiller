@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.DecisionsOConstitutionalCourt
 {
     internal class Decision : ICommand
     {
@@ -20,6 +20,7 @@ namespace DAL.TableCase
             foreach (DataRow row in _tableCH.Rows)
             {
                 //row from odluke_CH table
+                object id = row["ID"];
                 object idAPCH = row["IdAPCH_odluke"];
                 object prezime = row["Prezime"];
                 object ime = row["Ime"];
@@ -96,7 +97,6 @@ namespace DAL.TableCase
                 cmd.Parameters.AddWithValue("@CreatedBy",);
 
                 cmd.ExecuteNonQuery();
-
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.Refunds
 {
     internal class RefundSubjectStatus : ICommand
     {
@@ -16,6 +16,7 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
+                object idStatusPlacanja = row["IdStatusPredmeta"];
                 object statusPredmeta = row["StatusPredmeta"];
                 object datumUnosa = row["DatumUnosa"];
 

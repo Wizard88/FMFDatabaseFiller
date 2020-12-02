@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.Refunds
 {
     internal class RefundRelation : ICommand
     {
@@ -16,6 +16,7 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
+                object idVezePredmeta = row["IdVezePredmeta"];
                 object idPovrati = row["IdPovrati"];
                 object brojVezePredmeta = row["BrojVezePredmeta"];
                 object datumVezePredmeta = row["DatumVezePredmeta"];

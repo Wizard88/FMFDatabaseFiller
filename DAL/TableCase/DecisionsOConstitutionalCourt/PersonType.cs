@@ -1,13 +1,13 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.DecisionsOConstitutionalCourt
 {
-    internal class PaymentStatus : ICommand
+    internal class PersonType : ICommand
     {
         private readonly DataTable _table;
 
-        public PaymentStatus(DataTable table)
+        public PersonType(DataTable table)
         {
             _table = table;
         }
@@ -16,16 +16,17 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
-                object statusPlacanja = row["StatusPlacanja"];
+                object idTipOsobe = row["IdTipOsobe"];
+                object tipOsobe = row["TipOsobe"];
                 object datumUnosa = row["DatumUnosa"];
 
-                SqlCommand cmd = new SqlCommand("PaymentStatusInsert", SQLSingleton.Instance.SqlConnection)
+                SqlCommand cmd = new SqlCommand("PersonTypeInsert", SQLSingleton.Instance.SqlConnection)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure,
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Status", );
+                cmd.Parameters.AddWithValue("@Title", );
                 cmd.Parameters.AddWithValue("@Description", );
                 cmd.Parameters.AddWithValue("@zOrder", );
                 cmd.Parameters.AddWithValue("@CreateDate", );

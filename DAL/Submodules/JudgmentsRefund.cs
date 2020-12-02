@@ -4,12 +4,12 @@ using System.Data.SqlClient;
 
 namespace DAL.Submodules
 {
-    internal class Povrati : ICommand
+    internal class JudgmentsRefund : ICommand
     {
         private readonly DataSet _dataSet;
         private readonly bool _isTransactionAllowed;
 
-        public Povrati(DataSet dataSet, bool isTransactionAllowed)
+        public JudgmentsRefund(DataSet dataSet, bool isTransactionAllowed)
         {
             _dataSet = dataSet;
             _isTransactionAllowed = isTransactionAllowed;
@@ -24,14 +24,17 @@ namespace DAL.Submodules
                 transaction = SQLSingleton.Instance.SqlConnection.BeginTransaction("Load SubModule 'Povrati'");
 
                 TableCase.Scope.Factory.GetBudgetYearFiller(_dataSet.Tables["BudzetskaGodina"]).Execute(transaction);
-                TableCase.Scope.Factory.GetControlAuthorityFiller(_dataSet.Tables["KontrolniOrgan"]).Execute(transaction);
+                TableCase.Scope.Factory.GetBudgetInstitutionFiller(_dataSet.Tables["KontrolniOrgan"]).Execute(transaction);
                 TableCase.Scope.Factory.GetTaxPayerFiller(_dataSet.Tables["PodnosilacZahtjeva"], _dataSet.Tables["NazivPodnosilacZahtjeva"]).Execute(transaction);
                 TableCase.Scope.Factory.GetRefundFiller(_dataSet.Tables["Povrati"]).Execute(transaction);
-                TableCase.Scope.Factory.GetRefundPaymentFiller(_dataSet.Tables["PovratiPlacanje"]).Execute(transaction);
-                TableCase.Scope.Factory.GetBankAccountFiller(_dataSet.Tables["RacunPlacanja"]).Execute(transaction);
+                TableCase.Scope.Factory.GetRefundPaymentAndInstallmentFiller(_dataSet.Tables["PovratiPlacanje"]).Execute(transaction);
+                TableCase.Scope.Factory.GetMinistryBankAccountFiller(_dataSet.Tables["RacunPlacanja"]).Execute(transaction);
                 TableCase.Scope.Factory.GetOrdinalNumberFiller(_dataSet.Tables["Rata"]).Execute(transaction);
                 TableCase.Scope.Factory.GetMunicipalityFiller(_dataSet.Tables["Sjediste"]).Execute(transaction);
+                TableCase.Scope.Factory.GetRefundPaymentStatusFiller(_dataSet.Tables["StatusPlacanja"]).Execute(transaction);
                 TableCase.Scope.Factory.GetRefundSubjectStatusFiller(_dataSet.Tables["StatusPredmeta"]).Execute(transaction);
+                TableCase.Scope.Factory.GetRefundSideTaxPayerFiller(_dataSet.Tables["StranaZaPovrat"]).Execute(transaction);
+                TableCase.Scope.Factory.GetNameOfWhomTaxPayerFiller(_dataSet.Tables["UImeKoga"]).Execute(transaction);
                 TableCase.Scope.Factory.GetRefundRelationFiller(_dataSet.Tables["VezePredmeta"]).Execute(transaction);
                 TableCase.Scope.Factory.GetReturnTypeFiller(_dataSet.Tables["VrstaPovrata"]).Execute(transaction);
                 TableCase.Scope.Factory.GetIncomeTypeFiller(_dataSet.Tables["VrstaPrihoda"]).Execute(transaction);

@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.DecisionsOConstitutionalCourt
 {
     internal class CurrencyType : ICommand
     {
@@ -16,6 +16,7 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
+                object idVrstaValute = row["IdVrstaValute"];
                 object vrstaValute = row["VrstaValute"];
                 object datumUnosa = row["DatumUnosa"];
 
@@ -25,14 +26,14 @@ namespace DAL.TableCase
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Title", vrstaValute);
-                //cmd.Parameters.AddWithValue("@Description", );
-                //cmd.Parameters.AddWithValue("@zOrder", );
+                cmd.Parameters.AddWithValue("@Title",);
+                cmd.Parameters.AddWithValue("@Description", );
+                cmd.Parameters.AddWithValue("@zOrder", );
                 cmd.Parameters.AddWithValue("@CreateDate", datumUnosa);
-                //cmd.Parameters.AddWithValue("@UserID", );
-                //cmd.Parameters.AddWithValue("@Active", );
-                //cmd.Parameters.AddWithValue("@Code", );
-                //cmd.Parameters.AddWithValue("@LocalCurrency", );
+                cmd.Parameters.AddWithValue("@UserID", );
+                cmd.Parameters.AddWithValue("@Active", );
+                cmd.Parameters.AddWithValue("@Code", );
+                cmd.Parameters.AddWithValue("@LocalCurrency", );
 
                 cmd.ExecuteNonQuery();
             }

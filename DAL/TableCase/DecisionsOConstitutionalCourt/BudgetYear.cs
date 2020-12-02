@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.DecisionsOConstitutionalCourt
 {
     internal class BudgetYear : ICommand
     {
@@ -16,6 +16,7 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
+                object idBudzetskaGodina = row["IdBudzetskaGodina"];
                 object budzetskaGodina = row["BudzetskaGodina"];
                 object datumUnosa = row["DatumUnosa"];
 
@@ -26,11 +27,11 @@ namespace DAL.TableCase
                 };
 
                 cmd.Parameters.AddWithValue("@BudgetYear", budzetskaGodina);
-                //cmd.Parameters.AddWithValue("@Description", budzetskaGodina);
-                //cmd.Parameters.AddWithValue("@zOrder", budzetskaGodina);
+                cmd.Parameters.AddWithValue("@Description", budzetskaGodina);
+                cmd.Parameters.AddWithValue("@zOrder", budzetskaGodina);
                 cmd.Parameters.AddWithValue("@CreateDate", datumUnosa);
-                //cmd.Parameters.AddWithValue("@UserID", datumUnosa);
-                //cmd.Parameters.AddWithValue("@Active", datumUnosa);
+                cmd.Parameters.AddWithValue("@UserID", datumUnosa);
+                cmd.Parameters.AddWithValue("@Active", datumUnosa);
 
                 cmd.ExecuteNonQuery();
             }

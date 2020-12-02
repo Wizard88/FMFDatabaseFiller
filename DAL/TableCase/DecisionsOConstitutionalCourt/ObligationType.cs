@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.DecisionsOConstitutionalCourt
 {
     internal class ObligationType : ICommand
     {
@@ -16,6 +16,7 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
+                object idVrstaObaveze = row["IdVrstaObaveze"];
                 object vrstaObaveze = row["VrstaObaveze"];
                 object datumUnosa = row["DatumUnosa"];
 

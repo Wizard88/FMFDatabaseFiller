@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.Refunds
 {
     internal class MinistryBankAccount : ICommand
     {
@@ -16,6 +16,7 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
+                object idRacunPlacanja = row["IdRacunPlacanja"];
                 object racunPlacanja = row["RacunPlacanja"];
 
                 SqlCommand cmd = new SqlCommand("MinistryBankAccount.Save", SQLSingleton.Instance.SqlConnection)

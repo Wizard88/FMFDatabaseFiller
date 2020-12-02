@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.Refunds
 {
     internal class BudgetInstitution : ICommand
     {
@@ -16,7 +16,8 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
-                object budzetskiKorisnik = row["BudzetskiKorisnik"];
+                object idKontrolniOrgan = row["IdKontrolniOrgan"];
+                object kontrolniOrgan = row["KontrolniOrgan"];
                 object datumUnosa = row["DatumUnosa"];
 
                 SqlCommand cmd = new SqlCommand("BudgetInstitutionInsert", SQLSingleton.Instance.SqlConnection)

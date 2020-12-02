@@ -6,12 +6,12 @@ namespace DAL.Submodules
     {
         public ICommand GetDecisionsOfTheConstitutionalCourt(DataSet dataSet, bool isTransactionAllowed)
         {
-            return new OdlukeUstavnogSuda(dataSet, isTransactionAllowed);
+            return new DecisionsOfConstitutionalCourt(dataSet, isTransactionAllowed);
         }
 
         public ICommand GetJudgmentsRefunds(DataSet dataSet, bool isTransactionAllowed)
         {
-            return new Povrati(dataSet, isTransactionAllowed);
+            return new JudgmentsRefund(dataSet, isTransactionAllowed);
         }
     }
 }
