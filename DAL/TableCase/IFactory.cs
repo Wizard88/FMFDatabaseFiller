@@ -16,12 +16,12 @@ namespace DAL.TableCase
         ICommand GetMunicipalityFiller(DataTable table);
         ICommand GetOrdinalNumberFiller(DataTable table);
         ICommand GetBankFiller(DataTable table);
-        ICommand GetJudgmentAndExecutiveResultTaxPayerFiller(DataTable tableNamePersonFirm, DataTable tablePersonFirm);
-        ICommand GetExecutiveResultBudgetInstitutionFiller(DataTable table);
+        ICommand GetTaxPayerFirmFiller(DataTable tableNamePersonFirm, DataTable tablePersonFirm);
+        ICommand GetBudgetInstitutionUserFiller(DataTable table);
         ICommand GetJudgementDelivery(DataTable table);
         ICommand GetRefundFiller(DataTable table);
         ICommand GetExecutiveResultBudgetYearFiller(DataTable table);
-        ICommand GetJudgmentAndExecutiveResultRelationFiller(DataTable table);
+        ICommand GetResultRelationSublectLinkFromFiller(DataTable table);
         ICommand GetPaymentMethod(DataTable table);
         ICommand GetRefundPaymentAndInstallmentFiller(DataTable table);
         ICommand GetRefundRelationFiller(DataTable table);
@@ -29,8 +29,19 @@ namespace DAL.TableCase
         ICommand GetRefundSubjectStatusFiller(DataTable table);
         ICommand GetReturnTypeFiller(DataTable table);
         ICommand GetTaxPayerFiller(DataTable tableApplicant, DataTable tableNameOfApplicant);
+        ICommand GetJudgmentAndExecutiveResultFiller(DataTable table);
+        ICommand GetExecutiveResultInstallmentAndPaymentFiller(DataTable table);
         ICommand GetMinistryBankAccountFiller(DataTable table);
         ICommand GetRefundSideTaxPayerFiller(DataTable table);
         ICommand GetNameOfWhomTaxPayerFiller(DataTable table);
+        ICommand GetExecResSubjectStatusSubjectFiller(DataTable table);
+        ICommand GetSubjectStatus(DataTable table);
+        ICommand GetExecResSubjectStatusPaymentFiller(DataTable table);
+        ICommand GetBudgetInstitutionRespodentFiller(DataTable table);
+        ICommand GetTaxPayerRespondentFiller(DataTable table);
+        ICommand GetResultRelationSublectLinkFiller(DataTable table);
+        ICommand GetJudgmentAndExecutiveObligationTypeFiller(DataTable table);
+        ICommand GetObligationTypeGRFiller(DataTable table);
+        ICommand GetSubjectType(DataTable table);
     }
 }

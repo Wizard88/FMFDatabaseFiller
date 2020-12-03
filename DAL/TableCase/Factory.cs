@@ -6,6 +6,7 @@ namespace DAL.TableCase
     {
         //decisions
         public ICommand GetDecisionFiller(DataTable tableAPCH, DataTable tableCH)
+
         {
             return new DAL.TableCase.DecisionsOConstitutionalCourt.Decision(tableAPCH, tableCH);
         }
@@ -78,7 +79,7 @@ namespace DAL.TableCase
 
         public ICommand GetRefundSubjectStatusFiller(DataTable table)
         {
-            return new DAL.TableCase.Refunds.RefundSubjectStatus(table);
+            return new DAL.TableCase.Refunds.RefundsSubjectStatus(table);
         }
 
         public ICommand GetRefundSideTaxPayerFiller(DataTable table)
@@ -112,14 +113,14 @@ namespace DAL.TableCase
             return new DAL.TableCase.ExecutiveResults.Bank(table);
         }
 
-        public ICommand GetExecutiveResultBudgetInstitutionFiller(DataTable table)
+        public ICommand GetBudgetInstitutionUserFiller(DataTable table)
         {
-            return new DAL.TableCase.ExecutiveResults.BudgetInstitution(table);
+            return new DAL.TableCase.ExecutiveResults.BudgetInstitutionUser(table);
         }
 
-        public ICommand GetJudgmentAndExecutiveResultTaxPayerFiller(DataTable tableNamePersonFirm, DataTable tablePersonFirm)
+        public ICommand GetTaxPayerFirmFiller(DataTable tableNamePersonFirm, DataTable tablePersonFirm)
         {
-            return new DAL.TableCase.ExecutiveResults.TaxPayer(tableNamePersonFirm, tablePersonFirm);
+            return new DAL.TableCase.ExecutiveResults.TaxPayerFirm(tableNamePersonFirm, tablePersonFirm);
         }
 
         public ICommand GetJudgementDelivery(DataTable table)
@@ -132,11 +133,54 @@ namespace DAL.TableCase
             return new DAL.TableCase.ExecutiveResults.PaymentMethod(table);
         }
 
+        public ICommand GetJudgmentAndExecutiveResultFiller(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.ExecutiveResult(table);
+        }
+
+        public ICommand GetExecutiveResultInstallmentAndPaymentFiller(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.ExecutiveResultInstallmentAndPayment(table);
+        }
+
+        public ICommand GetExecResSubjectStatusSubjectFiller(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.ExecResSubjectStatusSubject(table);
+        }
+
+        public ICommand GetBudgetInstitutionRespodentFiller(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.BudgetInstitutionRespodent(table);
+        }
+
+        public ICommand GetTaxPayerRespondentFiller(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.TaxPayerRespondent(table);
+        }
+
+        public ICommand GetJudgmentAndExecutiveObligationTypeFiller(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.ObligationType(table);
+        }
+
+        public ICommand GetObligationTypeGRFiller(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.ObligationTypeGR(table);
+        }
+
+        public ICommand GetSubjectType(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.SubjectType(table);
+        }
+
+        public ICommand GetExecResSubjectStatusPaymentFiller(DataTable table)
+        {
+            return new DAL.TableCase.ExecutiveResults.ExecResSubjectStatusPayment(table);
+        }
 
 
-
-
-        public ICommand GetJudgmentAndExecutiveResultRelationFiller(DataTable dataTable)
+        /// <summary>
+        public ICommand GetResultRelationSublectLinkFromFiller(DataTable dataTable)
         {
             throw new System.NotImplementedException();
         }
@@ -150,5 +194,16 @@ namespace DAL.TableCase
         {
             return new DAL.TableCase.ExecutiveResults.BudgetYear(table);
         }
+
+        public ICommand GetSubjectStatus(DataTable table)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public ICommand GetResultRelationSublectLinkFiller(DataTable table)
+        {
+            throw new System.NotImplementedException();
+        }
+
     }
 }

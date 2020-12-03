@@ -44,8 +44,8 @@ namespace DAL.ExternalDatabase
         {
             if (listOfTableNames.Contains("APCH_odlukeIsplata")) return SubModule.OdlukeUstavnogSuda;
             else if (listOfTableNames.Contains("PovratiPlacanje")) return SubModule.Povrati;
-            else
-                return SubModule.OdlukeUstavnogSuda;
+            else if (listOfTableNames.Contains("PresudeIR")) return SubModule.Resenja;
+            return SubModule.OdlukeUstavnogSuda;
         }
     }
 }

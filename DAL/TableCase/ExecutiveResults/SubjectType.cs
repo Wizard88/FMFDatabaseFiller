@@ -1,13 +1,13 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.ExecutiveResults
 {
-    internal class ObligationTypeGR : ICommand
+    internal class SubjectType : ICommand
     {
         private readonly DataTable _table;
 
-        public ObligationTypeGR(DataTable table)
+        public SubjectType(DataTable table)
         {
             _table = table;
         }
@@ -16,11 +16,11 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
-                object idVrstaObavezeGR = row["IdVrstaObavezeGR"];
-                object vrstaObavezeGR = row["VrstaObavezeGR"];
+                object idVrstaPredmeta = row["IdVrstaPredmeta"];
+                object vrstaPredmeta = row["VrstaPredmeta"];
                 object datumUnosa = row["DatumUnosa"];
 
-                SqlCommand cmd = new SqlCommand("ObligationTypeGRInsert", SQLSingleton.Instance.SqlConnection)
+                SqlCommand cmd = new SqlCommand("SubjectTypeInsert", SQLSingleton.Instance.SqlConnection)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure,
                     Transaction = transaction

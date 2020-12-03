@@ -6,5 +6,6 @@ namespace DAL.Submodules
     {
         ICommand GetDecisionsOfTheConstitutionalCourt(DataSet dataSet, bool isTransactionAllowed);
         ICommand GetJudgmentsRefunds(DataSet dataSet, bool isTransactionAllowed);
+        ICommand GetJudgmentAndExecutiveResult(DataSet dataSet, bool isTransactionAllowed);
     }
 }

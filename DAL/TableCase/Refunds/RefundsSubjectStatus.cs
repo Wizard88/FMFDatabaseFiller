@@ -1,0 +1,37 @@
+﻿using System.Data;
+using System.Data.SqlClient;
+
+namespace DAL.TableCase.Refunds
+{
+    internal class RefundsSubjectStatus : ICommand
+    {
+        private readonly DataTable _table;
+
+        public RefundsSubjectStatus(DataTable table)
+        {
+            _table = table;
+        }
+
+        public void Execute(SqlTransaction transaction)
+        {
+            foreach (DataRow row in _table.Rows)
+            {
+                object idStatusPredmeta = row["IdStatusPredmeta"];
+                object statusPredmeta = row["StatusPredmeta"];
+                object datumUnosa = row["DatumUnosa"];
+
+                string commandText = string.Format("Insert into RefundSubjectStatus (RefundSubjectStatusID,Title,Code,DateCreated,Active) VALUES ({0},{1},{2},{3})",);
+
+                SqlCommand cmd = new SqlCommand()
+                {
+                    Connection = SQLSingleton.Instance.SqlConnection,
+                    CommandType = System.Data.CommandType.TableDirect,
+                    CommandText = commandText,
+                    Transaction = transaction
+                };
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
+}

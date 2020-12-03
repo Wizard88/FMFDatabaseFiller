@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.ExecutiveResults
 {
     internal class SubjectStatus : ICommand
     {
@@ -16,9 +16,9 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
+                object idTipVezePredmeta = row["IdTipVezePredmeta"];
                 object tipVezePredmeta = row["TipVezePredmeta"];
                 object datumUnosa = row["DatumUnosa"];
-
 
                 SqlCommand cmd = new SqlCommand("SubjectStatusSave", SQLSingleton.Instance.SqlConnection)
                 {
@@ -32,6 +32,8 @@ namespace DAL.TableCase
                 cmd.Parameters.AddWithValue("@Description", );
                 cmd.Parameters.AddWithValue("@Active", );
                 cmd.Parameters.AddWithValue("@CreatedBy", );
+
+                cmd.ExecuteNonQuery();
             }
         }
     }

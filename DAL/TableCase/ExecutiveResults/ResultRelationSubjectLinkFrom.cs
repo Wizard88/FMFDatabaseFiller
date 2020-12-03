@@ -3,11 +3,11 @@ using System.Data.SqlClient;
 
 namespace DAL.TableCase.ExecutiveResults
 {
-    internal class ResultRelation : ICommand
+    internal class ResultRelationSubjectLinkFrom : ICommand
     {
         private readonly DataTable _table;
 
-        public ResultRelation(DataTable table)
+        public ResultRelationSubjectLinkFrom(DataTable table)
         {
             _table = table;
         }

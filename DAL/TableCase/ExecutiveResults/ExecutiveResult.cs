@@ -1,13 +1,13 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase
+namespace DAL.TableCase.ExecutiveResults
 {
-    internal class JudgmentAndExecutiveResult : ICommand
+    internal class ExecutiveResult : ICommand
     {
         private readonly DataTable _table;
 
-        public JudgmentAndExecutiveResult(DataTable table)
+        public ExecutiveResult(DataTable table)
         {
             _table = table;
         }
@@ -16,6 +16,7 @@ namespace DAL.TableCase
         {
             foreach (DataRow row in _table.Rows)
             {
+                object idPresudeIR = row["IdPresudeIR"];
                 object brojPresudeIR = row["BrojPresudeIR"];
                 object datumPresudeIR = row["DatumPresudeIR"];
                 object brojProtokola = row["BrojProtokola"];

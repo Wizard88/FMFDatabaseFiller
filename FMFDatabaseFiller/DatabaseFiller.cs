@@ -59,6 +59,8 @@ namespace FMFDatabaseFiller
                     _subModulesCommand = DAL.Submodules.Scope.Factory.GetDecisionsOfTheConstitutionalCourt(dataSet, !cbRunAsTest.Checked); break;
                 case SubModule.Povrati:
                     _subModulesCommand = DAL.Submodules.Scope.Factory.GetJudgmentsRefunds(dataSet, !cbRunAsTest.Checked); break;
+                case SubModule.Resenja:
+                    _subModulesCommand = DAL.Submodules.Scope.Factory.GetJudgmentAndExecutiveResult(dataSet, !cbRunAsTest.Checked); break;
                 default:
                     break;
             }

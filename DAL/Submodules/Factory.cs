@@ -9,6 +9,11 @@ namespace DAL.Submodules
             return new DecisionsOfConstitutionalCourt(dataSet, isTransactionAllowed);
         }
 
+        public ICommand GetJudgmentAndExecutiveResult(DataSet dataSet, bool isTransactionAllowed)
+        {
+            return new JudgmentAndExecutiveResult(dataSet, isTransactionAllowed);
+        }
+
         public ICommand GetJudgmentsRefunds(DataSet dataSet, bool isTransactionAllowed)
         {
             return new JudgmentsRefund(dataSet, isTransactionAllowed);

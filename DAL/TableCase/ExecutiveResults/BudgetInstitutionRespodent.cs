@@ -3,11 +3,11 @@ using System.Data.SqlClient;
 
 namespace DAL.TableCase.ExecutiveResults
 {
-    internal class BudgetInstitution : ICommand
+    internal class BudgetInstitutionRespodent : ICommand
     {
         private readonly DataTable _table;
 
-        public BudgetInstitution(DataTable table)
+        public BudgetInstitutionRespodent(DataTable table)
         {
             _table = table;
         }
@@ -16,8 +16,11 @@ namespace DAL.TableCase.ExecutiveResults
         {
             foreach (DataRow row in _table.Rows)
             {
-                object idBudzetskiKorisnik = row["IdBudzetskiKorisnik"];
-                object budzetskiKorisnik = row["BudzetskiKorisnik"];
+                object idTuzenaStrana = row["IdTuzenaStrana"];
+                object idPresudeIsplata = row["IdPresudeIsplata"];
+                object idPresudeIR = row["IdPresudeIR"];
+                object idTuzeni = row["IdTuzeni"];
+                object idVrstaIsplate = row["IdVrstaIsplate"];
                 object datumUnosa = row["DatumUnosa"];
 
                 SqlCommand cmd = new SqlCommand("BudgetInstitutionInsert", SQLSingleton.Instance.SqlConnection)
@@ -31,6 +34,7 @@ namespace DAL.TableCase.ExecutiveResults
                 cmd.Parameters.AddWithValue("@ContactPerson",);
                 cmd.Parameters.AddWithValue("@ContactPhone",);
                 cmd.Parameters.AddWithValue("@UserID",);
+                cmd.Parameters.AddWithValue("@zOrder",);
                 cmd.Parameters.AddWithValue("@Description",);
 
                 cmd.ExecuteNonQuery();

@@ -1,13 +1,13 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace DAL.TableCase.Refunds
+namespace DAL.TableCase.ExecutiveResults
 {
-    internal class RefundSubjectStatus : ICommand
+    internal class ExecResSubjectStatusSubject : ICommand
     {
         private readonly DataTable _table;
 
-        public RefundSubjectStatus(DataTable table)
+        public ExecResSubjectStatusSubject(DataTable table)
         {
             _table = table;
         }
@@ -20,7 +20,7 @@ namespace DAL.TableCase.Refunds
                 object statusPredmeta = row["StatusPredmeta"];
                 object datumUnosa = row["DatumUnosa"];
 
-                string commandText = string.Format("Insert into RefundSubjectStatus (RefundSubjectStatusID,Title,Code,DateCreated,Active) VALUES ({0},{1},{2},{3},{4})",);
+                string commandText = string.Format("Insert into JudgmentExecResSubjectStatus (JudgmentExecResSubjectStatusID,Title,Code,DateCreated,Active) VALUES ({0},{1},{2},{3},{4})",);
 
                 SqlCommand cmd = new SqlCommand()
                 {

@@ -3,6 +3,7 @@
     public enum SubModule
     {
         OdlukeUstavnogSuda,
-        Povrati
+        Povrati,
+        Resenja
     }
 }
