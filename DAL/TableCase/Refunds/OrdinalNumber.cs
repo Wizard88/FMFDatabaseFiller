@@ -20,15 +20,15 @@ namespace DAL.TableCase.Refunds
                 object rata = row["Rata"];
                 object datumUnosa = row["DatumUnosa"];
 
-                //SqlCommand cmd = new SqlCommand("", SQLSingleton.Instance.SqlConnection)
-                //{
-                //    CommandType = System.Data.CommandType.StoredProcedure,
-                //    Transaction = transaction
-                //};
+                SqlCommand cmd = new SqlCommand("", SQLSingleton.Instance.SqlConnection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure,
+                    Transaction = transaction
+                };
 
-                //cmd.Parameters.AddWithValue("@",);
+                cmd.Parameters.AddWithValue("@",);
 
-                //cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
             }
         }
     }

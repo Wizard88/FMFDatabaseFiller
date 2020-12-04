@@ -26,7 +26,7 @@ namespace DAL.TableCase.ExecutiveResults
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Title", );
+                cmd.Parameters.AddWithValue("@Title", tipVezePredmeta);
                 cmd.Parameters.AddWithValue("@Code", );
                 cmd.Parameters.AddWithValue("@zOrder", );
                 cmd.Parameters.AddWithValue("@Description", );

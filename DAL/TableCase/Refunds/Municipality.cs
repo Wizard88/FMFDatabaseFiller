@@ -26,13 +26,13 @@ namespace DAL.TableCase.Refunds
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Title", );
+                cmd.Parameters.AddWithValue("@Title", sjediste);
                 cmd.Parameters.AddWithValue("@Code", );
                 cmd.Parameters.AddWithValue("@CantonID", );
                 cmd.Parameters.AddWithValue("@Description", );
                 cmd.Parameters.AddWithValue("@zOrder", );
-                cmd.Parameters.AddWithValue("@CreateDate", );
-                cmd.Parameters.AddWithValue("@UserID", );
+                cmd.Parameters.AddWithValue("@CreateDate", datumUnosa);
+                cmd.Parameters.AddWithValue("@UserID", 9);
                 cmd.Parameters.AddWithValue("@Active", );
 
                 cmd.ExecuteNonQuery();

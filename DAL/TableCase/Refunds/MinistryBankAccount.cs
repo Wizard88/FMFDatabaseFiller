@@ -25,9 +25,9 @@ namespace DAL.TableCase.Refunds
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@BankAccountNumber", );
-                cmd.Parameters.AddWithValue("@BankID", );
-                cmd.Parameters.AddWithValue("@CreateByUser", );
+                cmd.Parameters.AddWithValue("@BankAccountNumber", racunPlacanja);
+                cmd.Parameters.AddWithValue("@BankID", idRacunPlacanja);
+                cmd.Parameters.AddWithValue("@CreateByUser", 9);
 
 
                 cmd.ExecuteNonQuery();

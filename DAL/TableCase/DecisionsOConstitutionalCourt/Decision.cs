@@ -44,7 +44,7 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
                 object napomena = row["Napomena"];
                 object iznosValuta = row["IznosValuta"];
                 object idVrstaValute = row["IdVrstaValute"];
-                object brojDokumentaObaveze = row["BrojDokumentaVeze"];
+                object brojDokumentaVeze = row["BrojDokumentaVeze"];
                 object datumDokumentaVeze = row["DatumDokumentaVeze"];
                 object isplataNaIme = row["IsplataNaIme"];
 
@@ -74,27 +74,27 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
 
                 cmd.Parameters.AddWithValue("@DecisionNumber", apchBrojOdluke);
                 cmd.Parameters.AddWithValue("@ProtocolNumber", apchBrojProtokola);
-                cmd.Parameters.AddWithValue("@TaxPayerID",);
-                cmd.Parameters.AddWithValue("@BudgetInstitutionID",);
-                cmd.Parameters.AddWithValue("@PaymentMethodID",);
-                cmd.Parameters.AddWithValue("@NumberOfInstallment",);
-                cmd.Parameters.AddWithValue("@LoanPrincipal",);
-                cmd.Parameters.AddWithValue("@Interest",);
-                cmd.Parameters.AddWithValue("@CourtCost",);
-                cmd.Parameters.AddWithValue("@Total",);
-                cmd.Parameters.AddWithValue("@DecisionDate",);
-                cmd.Parameters.AddWithValue("@ProtocolDate",);
-                cmd.Parameters.AddWithValue("@InNameOfTaxPayerID",);
-                cmd.Parameters.AddWithValue("@SubjectTypeID",);
-                cmd.Parameters.AddWithValue("@SubjectStatusID",);
-                cmd.Parameters.AddWithValue("@ObligationTypeID",);
-                cmd.Parameters.AddWithValue("@Doknjizavanje",);
-                cmd.Parameters.AddWithValue("@DatumDoknjizavanja",);
-                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaSudTros",);
-                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaGlavnice",);
-                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaKamate",);
+                cmd.Parameters.AddWithValue("@TaxPayerID", 0);//dobaviti po iz Tax Payer
+                cmd.Parameters.AddWithValue("@BudgetInstitutionID", 87);
+                cmd.Parameters.AddWithValue("@PaymentMethodID", 19);
+                cmd.Parameters.AddWithValue("@NumberOfInstallment", 1);
+                cmd.Parameters.AddWithValue("@LoanPrincipal", iznosGlavni);
+                cmd.Parameters.AddWithValue("@Interest", kamata);
+                cmd.Parameters.AddWithValue("@CourtCost", troskovi);
+                cmd.Parameters.AddWithValue("@Total", ukupno);
+                cmd.Parameters.AddWithValue("@DecisionDate", datumOdluke);
+                cmd.Parameters.AddWithValue("@ProtocolDate", datumProtokola);
+                cmd.Parameters.AddWithValue("@InNameOfTaxPayerID", 0);//iz Tax Payer
+                cmd.Parameters.AddWithValue("@SubjectTypeID", null);//? ili null
+                cmd.Parameters.AddWithValue("@SubjectStatusID",);//?
+                cmd.Parameters.AddWithValue("@ObligationTypeID", idVrstaObaveze);
+                cmd.Parameters.AddWithValue("@Doknjizavanje", false);
+                cmd.Parameters.AddWithValue("@DatumDoknjizavanja", null);
+                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaSudTros", null);
+                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaGlavnice", null);
+                cmd.Parameters.AddWithValue("@IznosDoknjizavanjaKamate", null);
                 cmd.Parameters.AddWithValue("@Note", apchNapomena);
-                cmd.Parameters.AddWithValue("@CreatedBy",);
+                cmd.Parameters.AddWithValue("@CreatedBy", 9);
 
                 cmd.ExecuteNonQuery();
             }

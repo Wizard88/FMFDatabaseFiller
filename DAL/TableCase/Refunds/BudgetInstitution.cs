@@ -26,7 +26,7 @@ namespace DAL.TableCase.Refunds
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Name",);
+                cmd.Parameters.AddWithValue("@Name", kontrolniOrgan);
                 cmd.Parameters.AddWithValue("@Remark",);
                 cmd.Parameters.AddWithValue("@ContactPerson",);
                 cmd.Parameters.AddWithValue("@ContactPhone",);

@@ -27,11 +27,11 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
                 };
 
                 cmd.Parameters.AddWithValue("@BudgetYear", budzetskaGodina);
-                cmd.Parameters.AddWithValue("@Description", budzetskaGodina);
-                cmd.Parameters.AddWithValue("@zOrder", budzetskaGodina);
+                cmd.Parameters.AddWithValue("@Description", null);
+                cmd.Parameters.AddWithValue("@zOrder", null);
                 cmd.Parameters.AddWithValue("@CreateDate", datumUnosa);
-                cmd.Parameters.AddWithValue("@UserID", datumUnosa);
-                cmd.Parameters.AddWithValue("@Active", datumUnosa);
+                cmd.Parameters.AddWithValue("@UserID", 9);
+                cmd.Parameters.AddWithValue("@Active", null);
 
                 cmd.ExecuteNonQuery();
             }

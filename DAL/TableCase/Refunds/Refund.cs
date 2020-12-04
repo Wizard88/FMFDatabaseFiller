@@ -55,11 +55,11 @@ namespace DAL.TableCase.Refunds
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@SubjectNumber", );
-                cmd.Parameters.AddWithValue("@ReceivingInWorkDate", );
-                cmd.Parameters.AddWithValue("@RequestSubmitterID", );
+                cmd.Parameters.AddWithValue("@SubjectNumber", brojPredmeta);
+                cmd.Parameters.AddWithValue("@ReceivingInWorkDate", datumPrijemaURad);
+                cmd.Parameters.AddWithValue("@RequestSubmitterID", idPodnosilacZahtjeva);
                 cmd.Parameters.AddWithValue("@OnBehalfOfWhomID", );
-                cmd.Parameters.AddWithValue("@ControlAuthorityActDate", );
+                cmd.Parameters.AddWithValue("@ControlAuthorityActDate", datumKontrolnogOrgana);
                 cmd.Parameters.AddWithValue("@ClaimAgreementNumber", );
                 cmd.Parameters.AddWithValue("@ClaimAgreementDate", );
                 cmd.Parameters.AddWithValue("@ReturnTypeID", );

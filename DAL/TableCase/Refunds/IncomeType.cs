@@ -26,7 +26,7 @@ namespace DAL.TableCase.Refunds
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Title",);
+                cmd.Parameters.AddWithValue("@Title", vrstaPrihoda);
                 cmd.Parameters.AddWithValue("@Description",);
                 cmd.Parameters.AddWithValue("@zOrder",);
                 cmd.Parameters.AddWithValue("@CreateDate",);
