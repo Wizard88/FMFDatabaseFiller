@@ -27,7 +27,7 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
                 };
 
                 cmd.Parameters.AddWithValue("@ObligationTypeGRID",);
-                cmd.Parameters.AddWithValue("@Title",);
+                cmd.Parameters.AddWithValue("@Title", vrstaObaveze);
                 cmd.Parameters.AddWithValue("@Description",);
                 cmd.Parameters.AddWithValue("@zOrder",);
                 cmd.Parameters.AddWithValue("@CreateDate", datumUnosa);

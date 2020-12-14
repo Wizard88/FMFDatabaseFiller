@@ -30,8 +30,8 @@ namespace DAL.TableCase.ExecutiveResults
                 cmd.Parameters.AddWithValue("@Description", null);
                 cmd.Parameters.AddWithValue("@zOrder", null);
                 cmd.Parameters.AddWithValue("@CreateByUser", 9);
-                cmd.Parameters.AddWithValue("@Code",);
-                cmd.Parameters.AddWithValue("@MinistryBank",);
+                cmd.Parameters.AddWithValue("@Code", idBanka);
+                cmd.Parameters.AddWithValue("@MinistryBank", 1);
 
                 cmd.ExecuteNonQuery();
             }

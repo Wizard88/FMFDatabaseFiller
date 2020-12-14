@@ -25,7 +25,7 @@ namespace DAL.Submodules
                 TableCase.Scope.Factory.GetDecisionFiller(_dataSet.Tables["APCH_odluke"], _dataSet.Tables["odluke_CH"]).Execute(transaction);
                 TableCase.Scope.Factory.GetDecisionPaymentAndInstallmentFiller(_dataSet.Tables["APCH_odlukeIsplata"]).Execute(transaction);
                 TableCase.Scope.Factory.GetPaymentStatusFiller(_dataSet.Tables["StatusPlacanja"]).Execute(transaction);
-                TableCase.Scope.Factory.GetBudgetYearFiller(_dataSet.Tables["BudzetskaGodina"]).Execute(transaction);
+                //TableCase.Scope.Factory.GetBudgetYearFiller(_dataSet.Tables["BudzetskaGodina"]).Execute(transaction);
                 TableCase.Scope.Factory.GetCurrencyTypeFiller(_dataSet.Tables["VrstaValute"]).Execute(transaction);
                 //TableCase.Scope.Factory.GetPersonTypeFiller(_dataSet.Tables["TipOsobe"]).Execute(transaction);      
                 TableCase.Scope.Factory.GetObligationTypeFiller(_dataSet.Tables["VrstaObaveze"]).Execute(transaction);

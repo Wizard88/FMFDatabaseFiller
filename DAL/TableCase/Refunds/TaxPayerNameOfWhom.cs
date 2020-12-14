@@ -27,19 +27,19 @@ namespace DAL.TableCase.Refunds
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Name",);
-                cmd.Parameters.AddWithValue("@Description",);
-                cmd.Parameters.AddWithValue("@CreatedBy",);
-                cmd.Parameters.AddWithValue("@TaxNumber",);
-                cmd.Parameters.AddWithValue("@Address",);
-                cmd.Parameters.AddWithValue("@CantonID",);
-                cmd.Parameters.AddWithValue("@MunicipalityID",);
-                cmd.Parameters.AddWithValue("@JMBG_JIB",);
-                cmd.Parameters.AddWithValue("@CountryID",);
-                cmd.Parameters.AddWithValue("@Phone",);
-                cmd.Parameters.AddWithValue("@Fax",);
-                cmd.Parameters.AddWithValue("@Email",);
-                cmd.Parameters.AddWithValue("@TaxPayerTypeID",);
+                cmd.Parameters.AddWithValue("@Name", uImeKoga);
+                cmd.Parameters.AddWithValue("@Description", null);
+                cmd.Parameters.AddWithValue("@CreatedBy", 9);
+                cmd.Parameters.AddWithValue("@TaxNumber", null);
+                cmd.Parameters.AddWithValue("@Address", tempSjediste);
+                cmd.Parameters.AddWithValue("@CantonID", null);
+                cmd.Parameters.AddWithValue("@MunicipalityID", null);
+                cmd.Parameters.AddWithValue("@JMBG_JIB", null);
+                cmd.Parameters.AddWithValue("@CountryID", null);
+                cmd.Parameters.AddWithValue("@Phone", null);
+                cmd.Parameters.AddWithValue("@Fax", null);
+                cmd.Parameters.AddWithValue("@Email", null);
+                cmd.Parameters.AddWithValue("@TaxPayerTypeID", null);
 
                 cmd.ExecuteNonQuery();
             }

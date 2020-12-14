@@ -85,8 +85,8 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
                 cmd.Parameters.AddWithValue("@DecisionDate", datumOdluke);
                 cmd.Parameters.AddWithValue("@ProtocolDate", datumProtokola);
                 cmd.Parameters.AddWithValue("@InNameOfTaxPayerID", 0);//iz Tax Payer
-                cmd.Parameters.AddWithValue("@SubjectTypeID", null);//? ili null
-                cmd.Parameters.AddWithValue("@SubjectStatusID",);//?
+                cmd.Parameters.AddWithValue("@SubjectTypeID", "Nepoznato");
+                cmd.Parameters.AddWithValue("@SubjectStatusID", "Nepoznato");//?
                 cmd.Parameters.AddWithValue("@ObligationTypeID", idVrstaObaveze);
                 cmd.Parameters.AddWithValue("@Doknjizavanje", false);
                 cmd.Parameters.AddWithValue("@DatumDoknjizavanja", null);

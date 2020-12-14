@@ -26,11 +26,11 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Title",);
+                cmd.Parameters.AddWithValue("@Title", vrstaValute);
                 cmd.Parameters.AddWithValue("@Description", );
                 cmd.Parameters.AddWithValue("@zOrder", );
                 cmd.Parameters.AddWithValue("@CreateDate", datumUnosa);
-                cmd.Parameters.AddWithValue("@UserID", );
+                cmd.Parameters.AddWithValue("@UserID", 9);
                 cmd.Parameters.AddWithValue("@Active", );
                 cmd.Parameters.AddWithValue("@Code", );
                 cmd.Parameters.AddWithValue("@LocalCurrency", );

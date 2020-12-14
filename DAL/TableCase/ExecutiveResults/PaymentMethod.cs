@@ -26,12 +26,13 @@ namespace DAL.TableCase.ExecutiveResults
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Title", );
-                cmd.Parameters.AddWithValue("@Description", );
-                cmd.Parameters.AddWithValue("@zOrder", );
-                cmd.Parameters.AddWithValue("@CreateDate", );
-                cmd.Parameters.AddWithValue("@UserID", );
-                cmd.Parameters.AddWithValue("@Active", );
+                cmd.Parameters.AddWithValue("@Title", nacinPlacanja);
+                cmd.Parameters.AddWithValue("@Description", null);
+                cmd.Parameters.AddWithValue("@zOrder", null);
+                cmd.Parameters.AddWithValue("@CreateDate", datumUnosa);
+                cmd.Parameters.AddWithValue("@UserID", 9);
+                cmd.Parameters.AddWithValue("@Active", null);
+                cmd.Parameters.AddWithValue("@Code", idNacinPlacanja);
 
                 cmd.ExecuteNonQuery();
             }

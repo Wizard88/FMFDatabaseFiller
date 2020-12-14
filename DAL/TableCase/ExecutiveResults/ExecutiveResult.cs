@@ -45,14 +45,15 @@ namespace DAL.TableCase.ExecutiveResults
                 object napomena = row["Napomena"];
                 object datumUnosa = row["DatumUnosa"];
 
+
                 SqlCommand cmd = new SqlCommand("JudgmentAndExecutiveResult.Save", SQLSingleton.Instance.SqlConnection)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure,
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResultNumber",);
-                cmd.Parameters.AddWithValue("@ProtocolNumber",);
+                cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResultNumber", brojPresudeIR);
+                cmd.Parameters.AddWithValue("@ProtocolNumber", brojProtokola);
                 cmd.Parameters.AddWithValue("@TaxPayerID",);
                 cmd.Parameters.AddWithValue("@BudgetInstitutionID",);
                 cmd.Parameters.AddWithValue("@PaymentMethodID",);
@@ -62,28 +63,28 @@ namespace DAL.TableCase.ExecutiveResults
                 cmd.Parameters.AddWithValue("@CourtCostsIzvr",);
                 cmd.Parameters.AddWithValue("@CourtCostsPar",);
                 cmd.Parameters.AddWithValue("@CourtCostTotal",);
-                cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResultDate",);
-                cmd.Parameters.AddWithValue("@ProtocolDate",);
-                cmd.Parameters.AddWithValue("@SubjectTypeID",);
-                cmd.Parameters.AddWithValue("@SubjectStatusID",);
-                cmd.Parameters.AddWithValue("@ObligationTypeID",);
+                cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResultDate", datumPresudeIR);
+                cmd.Parameters.AddWithValue("@ProtocolDate", datumProtokola);
+                cmd.Parameters.AddWithValue("@SubjectTypeID", idVrstaPredmeta);
+                cmd.Parameters.AddWithValue("@SubjectStatusID", idStatusPredmeta);
+                cmd.Parameters.AddWithValue("@ObligationTypeID", "Nepoznato");
                 cmd.Parameters.AddWithValue("@Interest",);
                 cmd.Parameters.AddWithValue("@InterestGlav",);
                 cmd.Parameters.AddWithValue("@InterestTp",);
                 cmd.Parameters.AddWithValue("@InterestTotal",);
-                cmd.Parameters.AddWithValue("@AdditionalAccounting",);
-                cmd.Parameters.AddWithValue("@AdditionalAccountingDate",);
-                cmd.Parameters.AddWithValue("@AdditionalAccountingLegalCosts",);
-                cmd.Parameters.AddWithValue("@AdditionalAccountingPrincipal",);
-                cmd.Parameters.AddWithValue("@AdditionalAccountingInterestRate",);
-                cmd.Parameters.AddWithValue("@Note",);
-                cmd.Parameters.AddWithValue("@CreatedBy",);
-                cmd.Parameters.AddWithValue("@BankID",);
-                cmd.Parameters.AddWithValue("@ExecutiveResultDate",);
-                cmd.Parameters.AddWithValue("@ExecutiveResultNumber",);
-                cmd.Parameters.AddWithValue("@ActDate",);
-                cmd.Parameters.AddWithValue("@ActNumber",);
-                cmd.Parameters.AddWithValue("@JudgementDeliveryID",);
+                cmd.Parameters.AddWithValue("@AdditionalAccounting", null);
+                cmd.Parameters.AddWithValue("@AdditionalAccountingDate", null);
+                cmd.Parameters.AddWithValue("@AdditionalAccountingLegalCosts", null);
+                cmd.Parameters.AddWithValue("@AdditionalAccountingPrincipal", null);
+                cmd.Parameters.AddWithValue("@AdditionalAccountingInterestRate", null);
+                cmd.Parameters.AddWithValue("@Note", napomena);
+                cmd.Parameters.AddWithValue("@CreatedBy", 9);
+                cmd.Parameters.AddWithValue("@BankID", idBanka);
+                cmd.Parameters.AddWithValue("@ExecutiveResultDate", datumPresudeOdIR);
+                cmd.Parameters.AddWithValue("@ExecutiveResultNumber", brojPresudeOdIR);
+                cmd.Parameters.AddWithValue("@ActDate", null);
+                cmd.Parameters.AddWithValue("@ActNumber", null);
+                cmd.Parameters.AddWithValue("@JudgementDeliveryID", idDostavljenoOd);
 
                 cmd.ExecuteNonQuery();
             }

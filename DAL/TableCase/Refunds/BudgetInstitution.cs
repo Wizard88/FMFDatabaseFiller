@@ -27,11 +27,12 @@ namespace DAL.TableCase.Refunds
                 };
 
                 cmd.Parameters.AddWithValue("@Name", kontrolniOrgan);
-                cmd.Parameters.AddWithValue("@Remark",);
-                cmd.Parameters.AddWithValue("@ContactPerson",);
-                cmd.Parameters.AddWithValue("@ContactPhone",);
-                cmd.Parameters.AddWithValue("@UserID",);
-                cmd.Parameters.AddWithValue("@Description",);
+                cmd.Parameters.AddWithValue("@Remark", null);
+                cmd.Parameters.AddWithValue("@ContactPerson", null);
+                cmd.Parameters.AddWithValue("@ContactPhone", null);
+                cmd.Parameters.AddWithValue("@UserID", 9);
+                cmd.Parameters.AddWithValue("@Description", null);
+                cmd.Parameters.AddWithValue("@Code", idKontrolniOrgan);
 
                 cmd.ExecuteNonQuery();
             }

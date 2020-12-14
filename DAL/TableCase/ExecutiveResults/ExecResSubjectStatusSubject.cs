@@ -16,11 +16,12 @@ namespace DAL.TableCase.ExecutiveResults
         {
             foreach (DataRow row in _table.Rows)
             {
-                object idStatusPlacanja = row["IdStatusPredmeta"];
+                object idStatusPredmeta = row["IdStatusPredmeta"];
                 object statusPredmeta = row["StatusPredmeta"];
                 object datumUnosa = row["DatumUnosa"];
 
-                string commandText = string.Format("Insert into JudgmentExecResSubjectStatus (JudgmentExecResSubjectStatusID,Title,Code,DateCreated,Active) VALUES ({0},{1},{2},{3},{4})",);
+                string commandText = string.Format("Insert into JudgmentExecResSubjectStatus (JudgmentExecResSubjectStatusID,Title,Code,DateCreated,Active)" +
+                                                   " VALUES ({0},{1},{2},{3},{4})", idStatusPredmeta, statusPredmeta, datumUnosa,);
 
                 SqlCommand cmd = new SqlCommand()
                 {

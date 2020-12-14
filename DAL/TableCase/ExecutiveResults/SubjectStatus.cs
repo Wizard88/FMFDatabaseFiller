@@ -27,11 +27,11 @@ namespace DAL.TableCase.ExecutiveResults
                 };
 
                 cmd.Parameters.AddWithValue("@Title", tipVezePredmeta);
-                cmd.Parameters.AddWithValue("@Code", );
-                cmd.Parameters.AddWithValue("@zOrder", );
-                cmd.Parameters.AddWithValue("@Description", );
-                cmd.Parameters.AddWithValue("@Active", );
-                cmd.Parameters.AddWithValue("@CreatedBy", );
+                cmd.Parameters.AddWithValue("@Code", idTipVezePredmeta);
+                cmd.Parameters.AddWithValue("@zOrder", null);
+                cmd.Parameters.AddWithValue("@Description", null);
+                cmd.Parameters.AddWithValue("@Active", 1);
+                cmd.Parameters.AddWithValue("@CreatedBy", 9);
 
                 cmd.ExecuteNonQuery();
             }

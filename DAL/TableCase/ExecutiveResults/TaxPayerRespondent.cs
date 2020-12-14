@@ -26,9 +26,9 @@ namespace DAL.TableCase.ExecutiveResults
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Name",);
+                cmd.Parameters.AddWithValue("@Name", tuzeni);
                 cmd.Parameters.AddWithValue("@Description",);
-                cmd.Parameters.AddWithValue("@CreatedBy",);
+                cmd.Parameters.AddWithValue("@CreatedBy", 9);
                 cmd.Parameters.AddWithValue("@TaxNumber",);
                 cmd.Parameters.AddWithValue("@Address",);
                 cmd.Parameters.AddWithValue("@CantonID",);

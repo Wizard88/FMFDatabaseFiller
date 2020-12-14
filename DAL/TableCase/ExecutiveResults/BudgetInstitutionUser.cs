@@ -26,12 +26,12 @@ namespace DAL.TableCase.ExecutiveResults
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Name",);
-                cmd.Parameters.AddWithValue("@Remark",);
-                cmd.Parameters.AddWithValue("@ContactPerson",);
-                cmd.Parameters.AddWithValue("@ContactPhone",);
-                cmd.Parameters.AddWithValue("@UserID",);
-                cmd.Parameters.AddWithValue("@Description",);
+                cmd.Parameters.AddWithValue("@Name", budzetskiKorisnik);
+                cmd.Parameters.AddWithValue("@Remark", null);
+                cmd.Parameters.AddWithValue("@ContactPerson", null);
+                cmd.Parameters.AddWithValue("@ContactPhone", null);
+                cmd.Parameters.AddWithValue("@UserID", 9);
+                cmd.Parameters.AddWithValue("@Description", null);
 
                 cmd.ExecuteNonQuery();
             }

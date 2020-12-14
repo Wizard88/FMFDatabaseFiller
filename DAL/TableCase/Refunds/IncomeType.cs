@@ -27,11 +27,12 @@ namespace DAL.TableCase.Refunds
                 };
 
                 cmd.Parameters.AddWithValue("@Title", vrstaPrihoda);
-                cmd.Parameters.AddWithValue("@Description",);
-                cmd.Parameters.AddWithValue("@zOrder",);
-                cmd.Parameters.AddWithValue("@CreateDate",);
-                cmd.Parameters.AddWithValue("@UserID",);
-                cmd.Parameters.AddWithValue("@Active",);
+                cmd.Parameters.AddWithValue("@Description", null);
+                cmd.Parameters.AddWithValue("@zOrder", null);
+                cmd.Parameters.AddWithValue("@CreateDate", datumUnosa);
+                cmd.Parameters.AddWithValue("@UserID", 9);
+                cmd.Parameters.AddWithValue("@Active", 1);
+                cmd.Parameters.AddWithValue("@Code", idVrstaPrihoda);
 
                 cmd.ExecuteNonQuery();
             }

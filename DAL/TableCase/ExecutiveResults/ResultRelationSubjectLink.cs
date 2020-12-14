@@ -31,9 +31,9 @@ namespace DAL.TableCase.ExecutiveResults
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResult1ID",);
-                cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResult2ID",);
-                cmd.Parameters.AddWithValue("@UserID",);
+                cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResult1ID", idPresudeIR);
+                cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResult2ID", idPredmetVezeOd);
+                cmd.Parameters.AddWithValue("@UserID", 9);
 
                 cmd.ExecuteNonQuery();
             }

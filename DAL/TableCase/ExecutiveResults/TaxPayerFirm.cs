@@ -27,6 +27,8 @@ namespace DAL.TableCase.ExecutiveResults
                 object idTipOsobe = row["IdTipOsobe"];
                 object datumUnosa = row["DatumUnosa"];
 
+                string tempAdresa = string.Format("{0},{1}", adresa, sjediste);
+
                 EnumerableRowCollection<DataRow> results = from myRow in _tableNamePersonFirm.AsEnumerable()
                                                            where myRow.Field<int>("IdNazivOsobaFirma") == (int)idNazivOsobaFirma
                                                            select myRow;
@@ -42,19 +44,19 @@ namespace DAL.TableCase.ExecutiveResults
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Name",);
-                cmd.Parameters.AddWithValue("@Description",);
-                cmd.Parameters.AddWithValue("@CreatedBy",);
-                cmd.Parameters.AddWithValue("@TaxNumber",);
-                cmd.Parameters.AddWithValue("@Address",);
-                cmd.Parameters.AddWithValue("@CantonID",);
-                cmd.Parameters.AddWithValue("@MunicipalityID",);
-                cmd.Parameters.AddWithValue("@JMBG_JIB",);
-                cmd.Parameters.AddWithValue("@CountryID",);
-                cmd.Parameters.AddWithValue("@Phone",);
-                cmd.Parameters.AddWithValue("@Fax",);
-                cmd.Parameters.AddWithValue("@Email",);
-                cmd.Parameters.AddWithValue("@TaxPayerTypeID",);
+                cmd.Parameters.AddWithValue("@Name", nazivOsobaFirma);
+                cmd.Parameters.AddWithValue("@Description", null);
+                cmd.Parameters.AddWithValue("@CreatedBy", datumUnosa);
+                cmd.Parameters.AddWithValue("@TaxNumber", null);
+                cmd.Parameters.AddWithValue("@Address", tempAdresa);
+                cmd.Parameters.AddWithValue("@CantonID", null);
+                cmd.Parameters.AddWithValue("@MunicipalityID", null);
+                cmd.Parameters.AddWithValue("@JMBG_JIB", jmbgJib);
+                cmd.Parameters.AddWithValue("@CountryID", null);
+                cmd.Parameters.AddWithValue("@Phone", null);
+                cmd.Parameters.AddWithValue("@Fax", null);
+                cmd.Parameters.AddWithValue("@Email", null);
+                cmd.Parameters.AddWithValue("@TaxPayerTypeID", 2);
 
                 cmd.ExecuteNonQuery();
             }

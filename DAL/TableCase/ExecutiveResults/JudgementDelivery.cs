@@ -16,6 +16,7 @@ namespace DAL.TableCase.ExecutiveResults
         {
             foreach (DataRow row in _table.Rows)
             {
+                object idDostavljenoOd = row["IdDostavljenoOd"];
                 object dostavljenoOd = row["DostavljenoOd"];
                 object datumUnosa = row["DatumUnosa"];
 
@@ -25,11 +26,11 @@ namespace DAL.TableCase.ExecutiveResults
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Title",);
-                cmd.Parameters.AddWithValue("@Description",);
-                cmd.Parameters.AddWithValue("@zOrder",);
-                cmd.Parameters.AddWithValue("@CreateByUser",);
-                cmd.Parameters.AddWithValue("@Code",);
+                cmd.Parameters.AddWithValue("@Title", dostavljenoOd);
+                cmd.Parameters.AddWithValue("@Description", null);
+                cmd.Parameters.AddWithValue("@zOrder", null);
+                cmd.Parameters.AddWithValue("@CreateByUser", 9);
+                cmd.Parameters.AddWithValue("@Code", idDostavljenoOd);
 
                 cmd.ExecuteNonQuery();
             }

@@ -20,7 +20,8 @@ namespace DAL.TableCase.ExecutiveResults
                 object statusPlacanja = row["StatusPlacanja"];
                 object datumUnosa = row["DatumUnosa"];
 
-                string commandText = string.Format("Insert into JudgmentExecResSubjectStatus (JudgmentExecResSubjectStatusID,Title,Code,DateCreated,Active) VALUES ({0},{1},{2},{3},{4})",);
+                string commandText = string.Format("Insert into JudgmentExecResSubjectStatus (JudgmentExecResSubjectStatusID,Title,Code,DateCreated,Active) " +
+                                                    "VALUES ({0},{1},{2},{3},{4})", idStatusPlacanja, statusPlacanja,, datumUnosa,);
 
                 SqlCommand cmd = new SqlCommand()
                 {

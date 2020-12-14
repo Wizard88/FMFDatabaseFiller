@@ -23,7 +23,7 @@ namespace DAL.Submodules
             {
                 transaction = SQLSingleton.Instance.SqlConnection.BeginTransaction("Load SubModule 'Povrati'");
 
-                TableCase.Scope.Factory.GetBudgetYearFiller(_dataSet.Tables["BudzetskaGodina"]).Execute(transaction);
+                //TableCase.Scope.Factory.GetBudgetYearFiller(_dataSet.Tables["BudzetskaGodina"]).Execute(transaction);
                 TableCase.Scope.Factory.GetBudgetInstitutionFiller(_dataSet.Tables["KontrolniOrgan"]).Execute(transaction);
                 TableCase.Scope.Factory.GetTaxPayerFiller(_dataSet.Tables["PodnosilacZahtjeva"], _dataSet.Tables["NazivPodnosilacZahtjeva"]).Execute(transaction);
                 TableCase.Scope.Factory.GetRefundFiller(_dataSet.Tables["Povrati"]).Execute(transaction);

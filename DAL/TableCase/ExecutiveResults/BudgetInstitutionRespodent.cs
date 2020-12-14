@@ -16,11 +16,8 @@ namespace DAL.TableCase.ExecutiveResults
         {
             foreach (DataRow row in _table.Rows)
             {
-                object idTuzenaStrana = row["IdTuzenaStrana"];
-                object idPresudeIsplata = row["IdPresudeIsplata"];
-                object idPresudeIR = row["IdPresudeIR"];
                 object idTuzeni = row["IdTuzeni"];
-                object idVrstaIsplate = row["IdVrstaIsplate"];
+                object tuzeni = row["Tuzeni"];
                 object datumUnosa = row["DatumUnosa"];
 
                 SqlCommand cmd = new SqlCommand("BudgetInstitutionInsert", SQLSingleton.Instance.SqlConnection)
@@ -29,13 +26,13 @@ namespace DAL.TableCase.ExecutiveResults
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Name",);
-                cmd.Parameters.AddWithValue("@Remark",);
-                cmd.Parameters.AddWithValue("@ContactPerson",);
-                cmd.Parameters.AddWithValue("@ContactPhone",);
-                cmd.Parameters.AddWithValue("@UserID",);
-                cmd.Parameters.AddWithValue("@zOrder",);
-                cmd.Parameters.AddWithValue("@Description",);
+                cmd.Parameters.AddWithValue("@Name", tuzeni);
+                cmd.Parameters.AddWithValue("@Remark", null);
+                cmd.Parameters.AddWithValue("@ContactPerson", null);
+                cmd.Parameters.AddWithValue("@ContactPhone", null);
+                cmd.Parameters.AddWithValue("@UserID", 9);
+                cmd.Parameters.AddWithValue("@zOrder", null);
+                cmd.Parameters.AddWithValue("@Description", null);
 
                 cmd.ExecuteNonQuery();
             }

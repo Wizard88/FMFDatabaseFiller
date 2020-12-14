@@ -27,7 +27,7 @@ namespace DAL.TableCase.ExecutiveResults
 
                 cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResult1ID",);
                 cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResult2ID",);
-                cmd.Parameters.AddWithValue("@UserID",);
+                cmd.Parameters.AddWithValue("@UserID", 9);
 
                 cmd.ExecuteNonQuery();
             }

@@ -30,9 +30,9 @@ namespace DAL.TableCase.Refunds
                     Transaction = transaction
                 };
 
-                cmd.Parameters.AddWithValue("@Refund1ID",);
-                cmd.Parameters.AddWithValue("@Refund2ID",);
-                cmd.Parameters.AddWithValue("@UserID",);
+                cmd.Parameters.AddWithValue("@Refund1ID", idPovrati);
+                cmd.Parameters.AddWithValue("@Refund2ID", idVezaPredmetaOdKoga);
+                cmd.Parameters.AddWithValue("@UserID", 9);
 
                 cmd.ExecuteNonQuery();
             }
