@@ -66,10 +66,8 @@
     <Compile Include="TableCase\ExecutiveResults\ResultRelationSubjectLink.cs" />
     <Compile Include="TableCase\ExecutiveResults\TaxPayerRespondent.cs" />
     <Compile Include="TableCase\Refunds\MinistryBankAccount.cs" />
-    <Compile Include="TableCase\BudgetInstitution1.cs" />
     <Compile Include="TableCase\DecisionsOConstitutionalCourt\BudgetYear.cs" />
     <Compile Include="TableCase\Refunds\BudgetInstitution.cs" />
-    <Compile Include="TableCase\CourtCosts.cs" />
     <Compile Include="TableCase\DecisionsOConstitutionalCourt\CurrencyType.cs" />
     <Compile Include="TableCase\DecisionsOConstitutionalCourt\Decision.cs" />
     <Compile Include="TableCase\DecisionsOConstitutionalCourt\DecisionPaymentAndInstallment.cs" />
