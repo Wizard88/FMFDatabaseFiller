@@ -66,6 +66,8 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
                 object apchNapomena = relatedRow["Napomena"];
                 object apchDatumUnosa = relatedRow["DatumUnosa"];
 
+                int taxPayerID = Utility.GetTaxPayerID(ime.ToString(), prezime.ToString());
+
                 SqlCommand cmd = new SqlCommand("DecisionInsert", SQLSingleton.Instance.SqlConnection)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure,
@@ -74,7 +76,7 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
 
                 cmd.Parameters.AddWithValue("@DecisionNumber", apchBrojOdluke);
                 cmd.Parameters.AddWithValue("@ProtocolNumber", apchBrojProtokola);
-                cmd.Parameters.AddWithValue("@TaxPayerID", 0);//dobaviti po iz Tax Payer
+                cmd.Parameters.AddWithValue("@TaxPayerID", taxPayerID);
                 cmd.Parameters.AddWithValue("@BudgetInstitutionID", 87);
                 cmd.Parameters.AddWithValue("@PaymentMethodID", 19);
                 cmd.Parameters.AddWithValue("@NumberOfInstallment", 1);

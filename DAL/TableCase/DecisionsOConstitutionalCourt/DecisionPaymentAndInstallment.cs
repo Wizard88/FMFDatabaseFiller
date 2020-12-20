@@ -46,7 +46,10 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
                 double tempGlavnica = (glavnica == null) ? 0 : Convert.ToDouble(glavnica);
                 double tempKamata = (kamata == null) ? 0 : Convert.ToDouble(kamata);
 
-                double total = tempSudskiTroskovi + tempGlavnica + tempKamata;
+                double tempTotal = tempSudskiTroskovi + tempGlavnica + tempKamata;
+
+                int tempBudzetskaGodinaID = Convert.ToInt32(idBudzetskaGodina);
+                int tempBudzetskaGodina = Utility.GetBudgetYear(tempBudzetskaGodinaID);
 
                 SqlCommand cmdPayment = new SqlCommand("DecisionPayment.Save", SQLSingleton.Instance.SqlConnection)
                 {
@@ -58,7 +61,7 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
                 cmdPayment.Parameters.AddWithValue("@DecisionInstallmentID", idAPCHOdlukeIsplata);
                 cmdPayment.Parameters.AddWithValue("@DocumentNumber", brojRjesenjaIzvrsenja);
                 cmdPayment.Parameters.AddWithValue("@DocumentDate", datumRjesenjaIzvrsenja);
-                cmdPayment.Parameters.AddWithValue("@BudgetYear",);
+                cmdPayment.Parameters.AddWithValue("@BudgetYear", tempBudzetskaGodina);
                 cmdPayment.Parameters.AddWithValue("@MinistryBankAccountID", null);
                 cmdPayment.Parameters.AddWithValue("@StatementNumber", null);
                 cmdPayment.Parameters.AddWithValue("@RecivedDocumentNumber", null);
@@ -67,7 +70,7 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
                 cmdPayment.Parameters.AddWithValue("@TaxPayerID",);
                 cmdPayment.Parameters.AddWithValue("@TaxPayerBankAccountID", null);
                 cmdPayment.Parameters.AddWithValue("@PayOutDate", datumPlacanja);
-                cmdPayment.Parameters.AddWithValue("@Total", total);
+                cmdPayment.Parameters.AddWithValue("@Total", tempTotal);
                 cmdPayment.Parameters.AddWithValue("@CourtCost", sudskiTroskovi);
                 cmdPayment.Parameters.AddWithValue("@LoanPrincipal", glavnica);
                 cmdPayment.Parameters.AddWithValue("@Interest", kamata);
@@ -85,9 +88,9 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
 
                 cmdInstallment.Parameters.AddWithValue("@DecisionID",);
                 cmdInstallment.Parameters.AddWithValue("@DeliveryDate", null);
-                cmdInstallment.Parameters.AddWithValue("@BudgetYear", );
+                cmdInstallment.Parameters.AddWithValue("@BudgetYear", tempBudzetskaGodina);
                 cmdInstallment.Parameters.AddWithValue("@PaymentStatusID", idStatusPlacanja);
-                cmdInstallment.Parameters.AddWithValue("@Total", total);
+                cmdInstallment.Parameters.AddWithValue("@Total", tempTotal);
                 cmdInstallment.Parameters.AddWithValue("@CourtCost", tempSudskiTroskovi);
                 cmdInstallment.Parameters.AddWithValue("@LoanPrincipal", tempGlavnica);
                 cmdInstallment.Parameters.AddWithValue("@Interest", tempKamata);

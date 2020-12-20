@@ -98,6 +98,7 @@
     <Compile Include="TableCase\ExecutiveResults\TaxPayerFirm.cs" />
     <Compile Include="TableCase\Refunds\TaxPayerNameOfWhom.cs" />
     <Compile Include="TableCase\Refunds\TaxPayerRefundSide.cs" />
+    <Compile Include="TableCase\Utility.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
