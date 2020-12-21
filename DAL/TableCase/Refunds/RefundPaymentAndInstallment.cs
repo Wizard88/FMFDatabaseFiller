@@ -39,6 +39,8 @@ namespace DAL.TableCase.Refunds
                 double tempKamata = (kamataPlacanja == null) ? 0 : Convert.ToDouble(kamataPlacanja);
                 double total = tempGlavnica + tempKamata;
 
+                int tempBudzetskaGodinaID = Convert.ToInt32(idBudzetskaGodina);
+                int tempBudzetskaGodina = Utility.GetBudgetYear(tempBudzetskaGodinaID);
 
                 SqlCommand cmdRefundInstallment = new SqlCommand("RefundInstallmentInsert", SQLSingleton.Instance.SqlConnection)
                 {
@@ -48,8 +50,8 @@ namespace DAL.TableCase.Refunds
 
                 cmdRefundInstallment.Parameters.AddWithValue("@RefundID", idPovrati);
                 cmdRefundInstallment.Parameters.AddWithValue("@DeliveryDate", null);
-                cmdRefundInstallment.Parameters.AddWithValue("@BudgetYearID", idBudzetskaGodina);
-                cmdRefundInstallment.Parameters.AddWithValue("@PaymentStatusID", idStatusPlacanja);
+                cmdRefundInstallment.Parameters.AddWithValue("@BudgetYear", idBudzetskaGodina);
+                cmdRefundInstallment.Parameters.AddWithValue("@PaymentStatusID",);
                 cmdRefundInstallment.Parameters.AddWithValue("@Total", total);
                 cmdRefundInstallment.Parameters.AddWithValue("@LoanPrincipal", tempGlavnica);
                 cmdRefundInstallment.Parameters.AddWithValue("@Interest", tempKamata);
@@ -63,11 +65,11 @@ namespace DAL.TableCase.Refunds
                     Transaction = transaction
                 };
 
-                cmdRefundPayment.Parameters.AddWithValue("@RefundID", idPovrati);
-                cmdRefundPayment.Parameters.AddWithValue("@RefundInstallmentID", idPovratiPlacanje);
+                cmdRefundPayment.Parameters.AddWithValue("@RefundID", );
+                cmdRefundPayment.Parameters.AddWithValue("@RefundInstallmentID", );
                 cmdRefundPayment.Parameters.AddWithValue("@DocumentNumber", brojRjesenja);
                 cmdRefundPayment.Parameters.AddWithValue("@DocumentDate", datumRjesenja);
-                cmdRefundPayment.Parameters.AddWithValue("@BudgetYear", idBudzetskaGodina);
+                cmdRefundPayment.Parameters.AddWithValue("@BudgetYear", tempBudzetskaGodina);
                 //cmdRefundPayment.Parameters.AddWithValue("@PersonFirmBankID", );
                 cmdRefundPayment.Parameters.AddWithValue("@TaxPayerID", );
                 cmdRefundPayment.Parameters.AddWithValue("@TaxPayerBankAccountID", );

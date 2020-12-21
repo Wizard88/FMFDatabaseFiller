@@ -30,7 +30,7 @@ namespace DAL.Submodules
                 TableCase.Scope.Factory.GetPaymentMethod(_dataSet.Tables["NacinPlacanja"]).Execute(transaction);
                 TableCase.Scope.Factory.GetTaxPayerFirmFiller(_dataSet.Tables["NazivOsobaFirma"], _dataSet.Tables["OsobaFirma"]).Execute(transaction);
                 TableCase.Scope.Factory.GetResultRelationSublectLinkFromFiller(_dataSet.Tables["PredmetVezeOd"]).Execute(transaction);
-                TableCase.Scope.Factory.GetJudgmentAndExecutiveResultFiller(_dataSet.Tables["PresudeIR"]).Execute(transaction);
+                TableCase.Scope.Factory.GetJudgmentAndExecutiveResultFiller(_dataSet.Tables["PresudeIR"], _dataSet.Tables["PresudeIsplata"]).Execute(transaction);
                 TableCase.Scope.Factory.GetExecutiveResultInstallmentAndPaymentFiller(_dataSet.Tables["PresudeIsplata"]).Execute(transaction);
                 TableCase.Scope.Factory.GetMunicipalityFiller(_dataSet.Tables["Sjediste"]).Execute(transaction);
                 TableCase.Scope.Factory.GetExecResSubjectStatusSubjectFiller(_dataSet.Tables["StatusPredmeta"]).Execute(transaction);

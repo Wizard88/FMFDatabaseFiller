@@ -36,6 +36,11 @@ namespace DAL.TableCase
             return new DAL.TableCase.DecisionsOConstitutionalCourt.PersonType(table);
         }
 
+        public ICommand GetDecisionRelation(DataTable table)
+        {
+            return new DAL.TableCase.DecisionsOConstitutionalCourt.Relation(table);
+        }
+
         //refunds
         public ICommand GetBudgetInstitutionFiller(DataTable table)
         {
@@ -133,15 +138,16 @@ namespace DAL.TableCase
             return new DAL.TableCase.ExecutiveResults.PaymentMethod(table);
         }
 
-        public ICommand GetJudgmentAndExecutiveResultFiller(DataTable table)
+        public ICommand GetJudgmentAndExecutiveResultFiller(DataTable tableJudgmentIR, DataTable tableJudgmentPayment)
         {
-            return new DAL.TableCase.ExecutiveResults.ExecutiveResult(table);
+            return new DAL.TableCase.ExecutiveResults.ExecutiveResult(tableJudgmentIR, tableJudgmentPayment);
         }
 
         public ICommand GetExecutiveResultInstallmentAndPaymentFiller(DataTable table)
         {
             return new DAL.TableCase.ExecutiveResults.ExecutiveResultInstallmentAndPayment(table);
         }
+
 
         public ICommand GetExecResSubjectStatusSubjectFiller(DataTable table)
         {

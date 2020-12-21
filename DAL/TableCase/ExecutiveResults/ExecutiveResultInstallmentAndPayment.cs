@@ -65,6 +65,9 @@ namespace DAL.TableCase.ExecutiveResults
                 double tempKamataTPSP = (kamataTPSP == null) ? 0 : Convert.ToDouble(kamataTPSP);
                 double tempTotal = tempKamataISP + tempKamataGlavISP + tempKamataTPSP;
 
+                int tempBudzetskaGodinaID = Convert.ToInt32(idGodinaBudzeta);
+                int tempBudzetskaGodina = Utility.GetBudgetYear(tempBudzetskaGodinaID);
+
                 SqlCommand cmdInstallment = new SqlCommand("JudgmentAndExecutiveResultInstallment.Save", SQLSingleton.Instance.SqlConnection)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure,
@@ -73,7 +76,7 @@ namespace DAL.TableCase.ExecutiveResults
 
                 cmdInstallment.Parameters.AddWithValue("@JudgmentAndExecutiveResultID",);
                 cmdInstallment.Parameters.AddWithValue("@DeliveryDate", null);
-                cmdInstallment.Parameters.AddWithValue("@BudgetYear", );
+                cmdInstallment.Parameters.AddWithValue("@BudgetYear", tempBudzetskaGodina);
                 cmdInstallment.Parameters.AddWithValue("@PaymentStatusID", statusPlacanja);
                 cmdInstallment.Parameters.AddWithValue("@CourtCostIzvr", tempTroskoviIzvrsenja);
                 cmdInstallment.Parameters.AddWithValue("@CourtCostPar", tempTroskoviParnPostupka);
@@ -97,7 +100,7 @@ namespace DAL.TableCase.ExecutiveResults
                 cmdPayment.Parameters.AddWithValue("@JudgmentAndExecutiveResultInstallmentID", );
                 cmdPayment.Parameters.AddWithValue("@DocumentNumber", brojRjesenjaIsplate);
                 cmdPayment.Parameters.AddWithValue("@DocumentDate", datumRjesenjaIsplate);
-                cmdPayment.Parameters.AddWithValue("@BudgetYear", );
+                cmdPayment.Parameters.AddWithValue("@BudgetYear", tempBudzetskaGodina);
                 cmdPayment.Parameters.AddWithValue("@MinistryBankAccountID", null);
                 cmdPayment.Parameters.AddWithValue("@StatementNumber", 1);
                 cmdPayment.Parameters.AddWithValue("@RecivedDocumentNumber", brojDokZaprimanja);

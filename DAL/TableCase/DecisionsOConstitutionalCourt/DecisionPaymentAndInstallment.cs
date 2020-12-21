@@ -50,6 +50,7 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
 
                 int tempBudzetskaGodinaID = Convert.ToInt32(idBudzetskaGodina);
                 int tempBudzetskaGodina = Utility.GetBudgetYear(tempBudzetskaGodinaID);
+                int taxPayerID = Utility.GetTaxPayerID(isplataNaIme.ToString());
 
                 SqlCommand cmdPayment = new SqlCommand("DecisionPayment.Save", SQLSingleton.Instance.SqlConnection)
                 {
@@ -66,8 +67,8 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
                 cmdPayment.Parameters.AddWithValue("@StatementNumber", null);
                 cmdPayment.Parameters.AddWithValue("@RecivedDocumentNumber", null);
                 cmdPayment.Parameters.AddWithValue("@RecivedDate", datumPrijema);
-                cmdPayment.Parameters.AddWithValue("@RecivedBankDate",);
-                cmdPayment.Parameters.AddWithValue("@TaxPayerID",);
+                cmdPayment.Parameters.AddWithValue("@RecivedBankDate",);//?
+                cmdPayment.Parameters.AddWithValue("@TaxPayerID", taxPayerID);
                 cmdPayment.Parameters.AddWithValue("@TaxPayerBankAccountID", null);
                 cmdPayment.Parameters.AddWithValue("@PayOutDate", datumPlacanja);
                 cmdPayment.Parameters.AddWithValue("@Total", tempTotal);
@@ -86,7 +87,7 @@ namespace DAL.TableCase.DecisionsOConstitutionalCourt
                     Transaction = transaction
                 };
 
-                cmdInstallment.Parameters.AddWithValue("@DecisionID",);
+                cmdInstallment.Parameters.AddWithValue("@DecisionID",);//?
                 cmdInstallment.Parameters.AddWithValue("@DeliveryDate", null);
                 cmdInstallment.Parameters.AddWithValue("@BudgetYear", tempBudzetskaGodina);
                 cmdInstallment.Parameters.AddWithValue("@PaymentStatusID", idStatusPlacanja);

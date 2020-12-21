@@ -29,7 +29,7 @@ namespace DAL.TableCase
         ICommand GetRefundSubjectStatusFiller(DataTable table);
         ICommand GetReturnTypeFiller(DataTable table);
         ICommand GetTaxPayerFiller(DataTable tableApplicant, DataTable tableNameOfApplicant);
-        ICommand GetJudgmentAndExecutiveResultFiller(DataTable table);
+        ICommand GetJudgmentAndExecutiveResultFiller(DataTable tableJudgmentIR, DataTable tableJudgmentPayment);
         ICommand GetExecutiveResultInstallmentAndPaymentFiller(DataTable table);
         ICommand GetMinistryBankAccountFiller(DataTable table);
         ICommand GetRefundSideTaxPayerFiller(DataTable table);
@@ -43,5 +43,6 @@ namespace DAL.TableCase
         ICommand GetJudgmentAndExecutiveObligationTypeFiller(DataTable table);
         ICommand GetObligationTypeGRFiller(DataTable table);
         ICommand GetSubjectType(DataTable table);
+        ICommand GetDecisionRelation(DataTable table);
     }
 }

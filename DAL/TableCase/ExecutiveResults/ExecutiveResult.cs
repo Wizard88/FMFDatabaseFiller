@@ -1,20 +1,24 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace DAL.TableCase.ExecutiveResults
 {
     internal class ExecutiveResult : ICommand
     {
-        private readonly DataTable _table;
+        private readonly DataTable _tableJudgmentIR;
+        private readonly DataTable _tableJudgmentPayment;
 
-        public ExecutiveResult(DataTable table)
+        public ExecutiveResult(DataTable tableJudgmentIR, DataTable tableJudgmentPayment)
         {
-            _table = table;
+            _tableJudgmentIR = tableJudgmentIR;
+            _tableJudgmentPayment = tableJudgmentPayment;
         }
 
         public void Execute(SqlTransaction transaction)
         {
-            foreach (DataRow row in _table.Rows)
+            foreach (DataRow row in _tableJudgmentIR.Rows)
             {
                 object idPresudeIR = row["IdPresudeIR"];
                 object brojPresudeIR = row["BrojPresudeIR"];
@@ -45,6 +49,59 @@ namespace DAL.TableCase.ExecutiveResults
                 object napomena = row["Napomena"];
                 object datumUnosa = row["DatumUnosa"];
 
+                EnumerableRowCollection<DataRow> results = from myRow in _tableJudgmentPayment.AsEnumerable()
+                                                           where myRow.Field<int>("IdPresudeIR") == (int)idPresudeIR
+                                                           select myRow;
+
+                DataRow relatedRow = results.FirstOrDefault();
+
+                object idPresudeIsplata = relatedRow["IdPresudeIsplata"];
+                object idOsobaFirma = relatedRow["IdOsobaFirma"];
+                object brojRjesenjaIsplate = relatedRow["BrojRjesenjaIsplate"];
+                object datumRjesenjaIsplate = relatedRow["DatumRjesenjaIsplate"];
+                object idStatusOsobaFirma = relatedRow["IdStatusOsobaFirma"];
+                object datumSpremnostiIsplate = relatedRow["DatumSpremnostiIsplate"];
+                object idVrstaObaveze = relatedRow["IdVrstaObaveze"];
+                object idOsnovZaPlacanje = relatedRow["IdOsnovZaPlacanje"];
+                object idNacinPlacanja = relatedRow["IdNacinPlacanja"];
+                object brojRata = relatedRow["BrojRata"];
+                object zaIsplatu = relatedRow["ZaIsplatu"];
+                object glavnicaRataP = relatedRow["GlavnicaRataP"];
+                object kamataP = relatedRow["KamataP"];
+                object kamataGlavP = relatedRow["KamataGlavP"];
+                object kamataTP = relatedRow["KamataTP"];
+                object troskoviIzvrsenja = relatedRow["TroskoviIzvrsenja"];
+                object troskoviParnPostupka = relatedRow["TroskoviParnPostupka"];
+                object datumPlacanja = relatedRow["DatumPlacanja"];
+                object brojIzvoda = relatedRow["BrojIzvoda"];
+                object idGodinaBudzeta = relatedRow["IdGodinaBudzeta"];
+                object idBudzetskiKorisnik = relatedRow["IdBudzetskiKorisnik"];
+                object idBankaRelated = relatedRow["IdBanka"];
+                object brojDokZaprimanja = relatedRow["BrojDokZaprimanja"];
+                object datumZaprimanja = relatedRow["DatumZaprimanja"];
+                object datumBankaZaprimanja = relatedRow["DatumBankaZaprimanja"];
+                object idSjediste = relatedRow["IdSjediste"];
+                object brojRacuna = relatedRow["BrojRacuna"];
+                object brojPartije = relatedRow["BrojPartije"];
+                object glavnicaISP = relatedRow["GlavnicaISP"];
+                object kamataISP = relatedRow["KamataISP"];
+                object kamataGlavISP = relatedRow["KamataGlavISP"];
+                object kamataTPSP = relatedRow["KamataTPSP"];
+                object sudTroskoviSP = relatedRow["SudTroskoviSP"];
+                object kontrola2 = relatedRow["Kontrola2"];
+                object napomenaRelated = relatedRow["Napomena"];
+                object datumUnosaRelated = relatedRow["DatumUnosa"];
+
+                string statusPlacanja = (datumPlacanja == null) ? "Neplaćeno" : "Plaćeno";
+                double tempTroskoviIzvrsenja = (troskoviIzvrsenja == null) ? 0 : Convert.ToDouble(troskoviIzvrsenja);
+                double tempTroskoviParnPostupka = (troskoviParnPostupka == null) ? 0 : Convert.ToDouble(troskoviParnPostupka);
+                double totalSudTroskovi = tempTroskoviIzvrsenja + tempTroskoviParnPostupka;
+
+                double tempKamataISP = (kamataISP == null) ? 0 : Convert.ToDouble(kamataISP);
+                double tempKamataGlavISP = (kamataGlavISP == null) ? 0 : Convert.ToDouble(kamataGlavISP);
+                double tempKamataTPSP = (kamataTPSP == null) ? 0 : Convert.ToDouble(kamataTPSP);
+                double tempTotal = tempKamataISP + tempKamataGlavISP + tempKamataTPSP;
+
 
                 SqlCommand cmd = new SqlCommand("JudgmentAndExecutiveResult.Save", SQLSingleton.Instance.SqlConnection)
                 {
@@ -55,23 +112,23 @@ namespace DAL.TableCase.ExecutiveResults
                 cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResultNumber", brojPresudeIR);
                 cmd.Parameters.AddWithValue("@ProtocolNumber", brojProtokola);
                 cmd.Parameters.AddWithValue("@TaxPayerID",);
-                cmd.Parameters.AddWithValue("@BudgetInstitutionID",);
-                cmd.Parameters.AddWithValue("@PaymentMethodID",);
-                cmd.Parameters.AddWithValue("@NumberOfInstallment",);
-                cmd.Parameters.AddWithValue("@LoanPrincipalOrInstallment",);
-                cmd.Parameters.AddWithValue("@LoanPrincipalTotal",);
-                cmd.Parameters.AddWithValue("@CourtCostsIzvr",);
-                cmd.Parameters.AddWithValue("@CourtCostsPar",);
-                cmd.Parameters.AddWithValue("@CourtCostTotal",);
+                cmd.Parameters.AddWithValue("@BudgetInstitutionID", idBudzetskiKorisnik);
+                cmd.Parameters.AddWithValue("@PaymentMethodID", idNacinPlacanja);
+                cmd.Parameters.AddWithValue("@NumberOfInstallment", 1);
+                cmd.Parameters.AddWithValue("@LoanPrincipalOrInstallment", glavnicaRataP);
+                cmd.Parameters.AddWithValue("@LoanPrincipalTotal", glavnicaRataP);
+                cmd.Parameters.AddWithValue("@CourtCostsIzvr", tempTroskoviIzvrsenja);
+                cmd.Parameters.AddWithValue("@CourtCostsPar", tempTroskoviParnPostupka);
+                cmd.Parameters.AddWithValue("@CourtCostTotal", totalSudTroskovi);
                 cmd.Parameters.AddWithValue("@JudgmentAndExecutiveResultDate", datumPresudeIR);
                 cmd.Parameters.AddWithValue("@ProtocolDate", datumProtokola);
                 cmd.Parameters.AddWithValue("@SubjectTypeID", idVrstaPredmeta);
                 cmd.Parameters.AddWithValue("@SubjectStatusID", idStatusPredmeta);
                 cmd.Parameters.AddWithValue("@ObligationTypeID", "Nepoznato");
-                cmd.Parameters.AddWithValue("@Interest",);
-                cmd.Parameters.AddWithValue("@InterestGlav",);
-                cmd.Parameters.AddWithValue("@InterestTp",);
-                cmd.Parameters.AddWithValue("@InterestTotal",);
+                cmd.Parameters.AddWithValue("@Interest", tempKamataISP);
+                cmd.Parameters.AddWithValue("@InterestGlav", tempKamataGlavISP);
+                cmd.Parameters.AddWithValue("@InterestTp", tempKamataTPSP);
+                cmd.Parameters.AddWithValue("@InterestTotal", tempTotal);
                 cmd.Parameters.AddWithValue("@AdditionalAccounting", null);
                 cmd.Parameters.AddWithValue("@AdditionalAccountingDate", null);
                 cmd.Parameters.AddWithValue("@AdditionalAccountingLegalCosts", null);

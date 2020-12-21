@@ -55,6 +55,7 @@
     <Compile Include="Submodules\DecisionsOfConstitutionalCourt.cs" />
     <Compile Include="Submodules\JudgmentsRefund.cs" />
     <Compile Include="Submodules\Scope.cs" />
+    <Compile Include="TableCase\DecisionsOConstitutionalCourt\Relation.cs" />
     <Compile Include="TableCase\ExecutiveResults\Bank.cs" />
     <Compile Include="TableCase\ExecutiveResults\BudgetInstitutionRespodent.cs" />
     <Compile Include="TableCase\ExecutiveResults\BudgetInstitutionUser.cs" />
